@@ -54,11 +54,13 @@ export function Footer() {
             <ul className="space-y-3 text-sm">
               <li className="flex items-start gap-2">
                 <Phone size={16} className="mt-1 flex-shrink-0" />
-                <span>+57 300 123 4567</span>
+                <span>+57 311 248 6210</span> <br></br>
+                <Phone size={16} className="mt-1 flex-shrink-0" />
+                <span>(601) 488 47 44</span>
               </li>
               <li className="flex items-start gap-2">
                 <Mail size={16} className="mt-1 flex-shrink-0" />
-                <span>info@precolisto.com</span>
+                <span>lol@gmail.com</span>
               </li>
               <li className="flex items-start gap-2">
                 <MapPin size={16} className="mt-1 flex-shrink-0" />
@@ -86,7 +88,7 @@ export function Footer() {
 
         {/* Copyright */}
         <div className="border-t border-blue-400 pt-6 text-center text-sm text-gray-200">
-          <p>&copy; 2026 PrecoListo. Todos los derechos reservados.</p>
+          <p>&copy;Papas San Luis. Todos los derechos reservados.</p>
         </div>
       </div>
     </footer>

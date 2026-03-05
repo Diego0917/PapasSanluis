@@ -1,15 +1,16 @@
+import Imagendepapas from "../assets/imagendepapas.png";
 export function HeroSection() {
   return (
-    <section className="bg-[#003DA5] text-white py-20">
+    <section className="bg-[#003DA5]/90 text-white py-20">
       <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
           <div>
             <h1 className="text-5xl md:text-6xl mb-4">
-              La calidad que tu negocio necesita, en menos tiempo.
+              Del congelador a su mesa de 5 a 6 minutos.
             </h1>
             <p className="text-[#FFC107] text-2xl mb-4">
-              fácil, rápido y listo
+              Gracias por preferirnos.
             </p>
             <p className="text-lg mb-8 text-gray-100">
               Conoce nuestro catálogo y sorprende a tus clientes con productos
@@ -28,9 +29,9 @@ export function HeroSection() {
           {/* Right Image */}
           <div className="flex items-center justify-center">
             <img
-              src="https://images.unsplash.com/photo-1625331725309-83e4f3c1373b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxkZWxpY2lvdXMlMjBidXJnZXIlMjBmb29kfGVufDF8fHx8MTc3MjQ2NjcyM3ww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
-              alt="Deliciosas hamburguesas"
-              className="w-full max-w-md object-contain"
+              src={Imagendepapas}
+              alt="papas"
+              className="w-full max-w-xl object-contain -scale-x-100"
             />
           </div>
         </div>
