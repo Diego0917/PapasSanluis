@@ -1,73 +1,72 @@
 export function SolutionsSection() {
-  const categories = [
+  const sections = [
     {
-      name: "Salsas",
-      image:
-        "https://images.unsplash.com/photo-1741519140428-5a4f8ee78ae2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzYXVjZXMlMjBjb25kaW1lbnRzfGVufDF8fHx8MTc3MjUwNDc4OXww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+      title1: 'PARA',
+      title2: 'TU CASA',
+      description: 'Encuentra aquí la variedad de productos, recetas y tips de preparación que tenemos para ti.',
+      buttonText: 'Conocer más',
+      image: 'https://images.unsplash.com/photo-1609428058261-ef5b2954875a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxmYW1pbHklMjBlYXRpbmclMjBmcmllcyUyMGhvbWV8ZW58MXx8fHwxNzczMTE1OTg4fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
     },
     {
-      name: "Conservados",
-      image:
-        "https://images.unsplash.com/photo-1579763209326-faf2551f9b79?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjYW5uZWQlMjBmb29kJTIwcHJvZHVjdHN8ZW58MXx8fHwxNzcyNDYyMTc2fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-    },
-    {
-      name: "Lácteos",
-      image:
-        "https://images.unsplash.com/photo-1621458472871-d8b6a409aba1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxkYWlyeSUyMHByb2R1Y3RzJTIwbWlsa3xlbnwxfHx8fDE3NzI0NTU4MTV8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-    },
-    {
-      name: "Aceites",
-      image:
-        "https://images.unsplash.com/photo-1757801333069-f7b3cabaec4a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjb29raW5nJTIwb2lsJTIwYm90dGxlfGVufDF8fHx8MTc3MjQyNjM3NHww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-    },
-    {
-      name: "Bases",
-      image:
-        "https://images.unsplash.com/photo-1707729509134-fe9ad5f6a5b6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxmb29kJTIwcHJvZHVjdHMlMjBncm9jZXJ5fGVufDF8fHx8MTc3MjUwNDc4OXww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-    },
-    {
-      name: "Importados",
-      image:
-        "https://images.unsplash.com/photo-1579763209326-faf2551f9b79?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjYW5uZWQlMjBmb29kJTIwcHJvZHVjdHN8ZW58MXx8fHwxNzcyNDYyMTc2fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-    },
-    {
-      name: "Carnes",
-      image:
-        "https://images.unsplash.com/photo-1625331725309-83e4f3c1373b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxkZWxpY2lvdXMlMjBidXJnZXIlMjBmb29kfGVufDF8fHx8MTc3MjQ2NjcyM3ww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+      title1: 'PARA',
+      title2: 'TU NEGOCIO',
+      description: 'Conoce el portafolio de productos que te ofrece, además de soluciones que te ayudarán a rentabilizar tu negocio.',
+      buttonText: 'Conocer más',
+      image: 'https://images.unsplash.com/photo-1622021142947-da7dedc7c39a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxyZXN0YXVyYW50JTIwa2l0Y2hlbiUyMGJ1c2luZXNzJTIwY2hlZnxlbnwxfHx8fDE3NzMxMTU5ODh8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
     },
   ];
 
   return (
-    <section className="py-20 bg-white">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
-          <h2 className="text-4xl text-[#003DA5] mb-2">
-            De la tierra a tu antojo.
-          </h2>
-          <p className="text-[#FFC107] text-xl">
-            Encuentra todo en un solo lugar
-          </p>
-        </div>
-
-        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-6">
-          {categories.map((category, index) => (
-            <div
-              key={index}
-              className="flex flex-col items-center group cursor-pointer"
-            >
-              <div className="w-24 h-24 rounded-lg overflow-hidden mb-3 shadow-md group-hover:shadow-xl transition-shadow">
-                <img
-                  src={category.image}
-                  alt={category.name}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform"
-                />
-              </div>
-              <span className="text-[#003DA5] text-sm text-center group-hover:text-[#FFC107] transition-colors">
-                {category.name}
-              </span>
+    <section className="w-full">
+      <div className="grid md:grid-cols-2 grid-cols-1">
+        {sections.map((section, index) => (
+          <div
+            key={index}
+            className="relative h-[500px] md:h-[650px] overflow-hidden group"
+          >
+            {/* Background Image con efecto zoom al pasar el mouse */}
+            <div 
+              className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
+              style={{ backgroundImage: `url(${section.image})` }}
+            />
+            
+            {/* Overlay de oscuridad para legibilidad */}
+            <div className="absolute inset-0 bg-black/50 group-hover:bg-black/40 transition-colors duration-500" />
+            
+            {/* Contenido Centralizado */}
+            <div className="relative h-full flex flex-col justify-center items-start px-12 md:px-20 z-10">
+              <h2 className="mb-4">
+                <span className="block text-[#FFC107] text-5xl md:text-7xl font-bold italic drop-shadow-lg">
+                  {section.title1}
+                </span>
+                <span className="block text-white text-5xl md:text-7xl font-bold drop-shadow-lg">
+                  {section.title2}
+                </span>
+              </h2>
+              
+              <p className="text-white text-lg md:text-xl max-w-md mb-8 leading-relaxed drop-shadow-sm">
+                {section.description}
+              </p>
+              
+              <button className="bg-[#FFC107] text-[#003DA5] px-10 py-3 rounded-full font-bold text-lg hover:bg-white transition-all flex items-center gap-2 group/btn">
+                {section.buttonText}
+                <svg 
+                  className="w-5 h-5 group-hover/btn:translate-x-2 transition-transform" 
+                  fill="none" 
+                  stroke="currentColor" 
+                  viewBox="0 0 24 24"
+                >
+                  <path 
+                    strokeLinecap="round" 
+                    strokeLinejoin="round" 
+                    strokeWidth={2} 
+                    d="M9 5l7 7-7 7" 
+                  />
+                </svg>
+              </button>
             </div>
-          ))}
-        </div>
+          </div>
+        ))}
       </div>
     </section>
   );
