@@ -1,6 +1,7 @@
 import Imagendepapas from "../assets/imagendepapas.png";
-import fondoImagen from "../assets/1.jpeg";
+import fondoImagen from "../assets/fondosanluis3.png";
 import sanLuisLogo from "../assets/sanluislogo.png";
+
 
 export function HeroSection() {
   return (
