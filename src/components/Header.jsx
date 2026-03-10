@@ -6,21 +6,27 @@ export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const menuItems = [
-    "Aceites", "Carnes", "Panes", "Francesa", 
-    "Apanados", "Congelados", "Salsas", "Vegetales", "Catálogo",
+    "Aceites",
+    "Carnes",
+    "Panes",
+    "Francesa",
+    "Apanados",
+    "Congelados",
+    "Salsas",
+    "Vegetales",
+    "Catálogo",
   ];
 
   return (
     // CAMBIO CLAVE: Quitamos bg-white y sticky. Usamos absolute y bg-transparent.
-    <header className="absolute top-0 left-0 w-full z-50 bg-transparent transition-all">
+    <header className="absolute top-0 left-0 w-full z-50 bg-black/30 transition-all">
       <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-        
         {/* Logo - Ajustado para que resalte sobre el fondo */}
         <div className="flex items-center">
           <img
             src={sanLuisLogo}
             alt="Papas San Luis"
-            className="h-20 w-auto object-contain drop-shadow-md" 
+            className="h-20 w-auto object-contain drop-shadow-md"
           />
         </div>
 
@@ -29,7 +35,7 @@ export function Header() {
           <div className="relative">
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="flex items-center gap-2 text-white border-2 border-white px-6 py-2 rounded-full bg-[#003DA5] hover:bg-white hover:text-[#003DA5] transition-all shadow-lg"
+              className="flex items-center gap-2 text-blue border-2 border-[#003DA5] px-6 py-2 rounded-full bg-[#ffffff] hover:bg-white hover:text-[#003DA5] transition-all shadow-lg"
             >
               <span>Menú</span>
               <ChevronDown
@@ -53,10 +59,6 @@ export function Header() {
               </div>
             )}
           </div>
-
-          <button className="bg-[#003DA5] border-2 border-white text-white px-6 py-2 rounded-full hover:bg-white hover:text-[#003DA5] transition-all shadow-lg font-bold">
-            Cotizar
-          </button>
         </div>
       </div>
 

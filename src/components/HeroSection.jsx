@@ -1,9 +1,10 @@
 import Imagendepapas from "../assets/imagendepapas.png";
 import fondoImagen from "../assets/1.jpeg";
+import sanLuisLogo from "../assets/sanluislogo.png";
 
 export function HeroSection() {
   return (
-    <section 
+    <section
       className="relative min-h-screen flex items-center text-white bg-cover bg-center bg-no-repeat overflow-hidden"
       style={{ backgroundImage: `url(${fondoImagen})` }}
     >
@@ -12,7 +13,6 @@ export function HeroSection() {
 
       <div className="container mx-auto px-4 relative z-10 pt-24">
         <div className="grid md:grid-cols-2 gap-8 items-center">
-          
           {/* Lado Izquierdo: Texto */}
           <div className="space-y-6">
             <h1 className="text-5xl md:text-7xl font-bold leading-tight drop-shadow-lg">
@@ -25,7 +25,7 @@ export function HeroSection() {
               Conoce nuestro catálogo y sorprende a tus clientes con productos
               precocidos de sabor irresistible.
             </p>
-            
+
             <div className="flex gap-4 pt-4">
               <button className="border-2 border-white text-white px-10 py-3 rounded-full hover:bg-white hover:text-[#003DA5] transition-all font-bold text-lg">
                 CATÁLOGO
@@ -39,12 +39,11 @@ export function HeroSection() {
           {/* Lado Derecho: Imagen de los Personajes */}
           <div className="flex items-center justify-center relative">
             <img
-              src={Imagendepapas}
-              alt="papas"
+              src=""
+              alt=""
               className="w-full max-w-2xl object-contain -scale-x-100 drop-shadow-[0_20px_20px_rgba(0,0,0,0.5)]"
             />
           </div>
-
         </div>
       </div>
     </section>
