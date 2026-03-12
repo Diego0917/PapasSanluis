@@ -1,80 +1,112 @@
-import { Check, Truck, Boxes, Users } from 'lucide-react';
-// Importamos la imagen local desde tu carpeta de assets
+import { motion } from "framer-motion";
+import { Truck, Boxes, Star, Utensils } from 'lucide-react';
 import fondoPapitas from "../assets/fondo de papitas san luis.jpeg";
+// Importamos el logo
+import logoSanLuis from "../assets/sanluislogo.png";
 
 export function WhyChooseSection() {
   const features = [
     {
-      icon: <Check className="w-5 h-5" />,
-      text: 'Calidad premium en cada producto.',
+      icon: <Star className="w-6 h-6" />,
+      title: 'Calidad Premium',
+      text: 'Selección rigurosa desde el origen.',
     },
     {
-      icon: <Truck className="w-5 h-5" />,
-      text: 'Entregas rápidas y seguras.',
+      icon: <Truck className="w-6 h-6" />,
+      title: 'Logística Voraz',
+      text: 'Entregas que desafían el reloj.',
     },
     {
-      icon: <Boxes className="w-5 h-5" />,
-      text: 'Catálogo variado para todo tipo de negocios.',
+      icon: <Boxes className="w-6 h-6" />,
+      title: 'Stock Variado',
+      text: 'Variedad total para tu negocio.',
     },
     {
-      icon: <Users className="w-5 h-5" />,
-      text: 'Asesoría personalizada para impulsar tu crecimiento.',
+      icon: <Utensils className="w-6 h-6" />,
+      title: 'Sabor que Atrapa',
+      text: 'Textura y crocancia inigualable.',
     },
   ];
 
   return (
-    <section className="py-16 md:py-24 bg-white">
+    <section className="py-20 bg-slate-50 overflow-hidden">
       <div className="container mx-auto px-4">
-        <div className="grid md:grid-cols-2 gap-12 items-center">
-          {/* Left Content */}
-          <div>
-  <h2 className="text-4xl md:text-5xl font-bold text-[#003DA5] mb-2">
-    ¿Por qué elegir Papas San Luis?
-  </h2>
-  <p className="text-[#FFC107] text-xl font-semibold mb-6">
-    Calidad del campo a tu mesa
-  </p>
-    
-  <p className="text-gray-700 mb-8 leading-relaxed">
-    En Papas San Luis nos especializamos en ofrecerte la mejor selección de 
-    papas lavadas y una variedad de productos congelados listos para usar. 
-    Sabemos que la frescura y la practicidad son clave para tu hogar o negocio; 
-    por eso, garantizamos procesos de limpieza rigurosos y soluciones que te 
-    ahorran tiempo sin sacrificar el sabor natural. Confía en expertos que 
-    entienden la importancia de un producto confiable y de alta calidad.
-  </p>
+        
+        {/* Encabezado con el LOGO integrado en el título */}
+        <div className="text-center mb-16">
+          <motion.div 
+            initial={{ opacity: 0, y: -20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="flex flex-col md:flex-row items-center justify-center gap-4 text-4xl md:text-6xl font-black text-[#003DA5] uppercase tracking-tighter"
+          >
+            <span>¿Por qué</span>
+            <img 
+              src={logoSanLuis} 
+              alt="San Luis" 
+              className="h-16 md:h-24 w-auto object-contain" 
+            />
+            <span>es la ley?</span>
+          </motion.div>
+          <div className="w-24 h-2 bg-[#FFC107] mx-auto mt-6 rounded-full"></div>
+        </div>
 
-
-            <div className="space-y-4">
-              <p className="text-[#003DA5] font-bold mb-4">
-                Lo que nos diferencia:
-              </p>
-              
-              {features.map((feature, index) => (
-                <div key={index} className="flex items-start gap-3 group">
-                  <div className="text-[#003DA5] mt-1 flex-shrink-0 bg-blue-50 p-1 rounded-full group-hover:bg-[#FFC107] group-hover:text-white transition-colors">
-                    {feature.icon}
-                  </div>
-                  <p className="text-gray-700 font-medium">
-                    {feature.text}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Right Image */}
-          <div className="relative">
-            <div className="rounded-2xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.15)] border-4 border-white">
+        <div className="grid lg:grid-cols-2 gap-16 items-center">
+          
+          {/* Lado Imagen */}
+          <motion.div 
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="relative"
+          >
+            <div className="relative z-10 rounded-[2.5rem] overflow-hidden border-8 border-white shadow-2xl rotate-2 hover:rotate-0 transition-transform duration-500">
               <img 
                 src={fondoPapitas}
-                alt="Papas San Luis" 
-                className="w-full h-auto object-cover hover:scale-105 transition-transform duration-700"
+                alt="El arte de la papa" 
+                className="w-full h-[500px] object-cover scale-110 hover:scale-100 transition-transform duration-1000"
               />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#003DA5]/60 to-transparent"></div>
+              <div className="absolute bottom-8 left-8">
+                <p className="text-white text-2xl font-black italic">EL SABOR QUE MANDA.</p>
+              </div>
             </div>
-            {/* Elementos decorativos de fondo */}
-            <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-[#FFC107] rounded-full opacity-30 blur-2xl -z-10" />
-            <div className="absolute -top-6 -left-6 w-32 h-32 bg-[#003DA5] rounded-full opacity-20 blur-2xl -z-10" />
+            <div className="absolute -top-10 -left-10 w-64 h-64 bg-[#FFC107] rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse"></div>
+          </motion.div>
+
+          {/* Lado Contenido */}
+          <div className="space-y-8">
+            <p className="text-xl text-gray-600 leading-relaxed font-medium italic border-l-4 border-[#FFC107] pl-6">
+              "No solo vendemos papas; entregamos la herramienta principal para que tu cocina brille. Frescura indomable y una logística que no perdona errores."
+            </p>
+
+            <div className="grid sm:grid-cols-2 gap-4">
+              {features.map((feature, index) => (
+                <motion.div 
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                  className="bg-white p-6 rounded-2xl shadow-sm border-b-4 border-transparent hover:border-[#003DA5] hover:shadow-xl transition-all group"
+                >
+                  <div className="text-[#003DA5] mb-4 bg-blue-50 w-12 h-12 flex items-center justify-center rounded-xl group-hover:bg-[#003DA5] group-hover:text-white transition-colors">
+                    {feature.icon}
+                  </div>
+                  <h3 className="font-bold text-[#003DA5] text-lg mb-1">{feature.title}</h3>
+                  <p className="text-gray-500 text-sm leading-snug">{feature.text}</p>
+                </motion.div>
+              ))}
+            </div>
+
+            <motion.button 
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="w-full py-4 bg-[#003DA5] text-white font-black rounded-xl shadow-lg hover:bg-[#002b75] transition-colors tracking-widest uppercase"
+            >
+              ¡ÚNETE A LA ÉLITE!
+            </motion.button>
           </div>
         </div>
       </div>
