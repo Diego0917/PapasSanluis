@@ -28,20 +28,22 @@ export function WhyChooseSection() {
         <div className="grid md:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
           <div>
-            <h2 className="text-4xl md:text-5xl font-bold text-[#003DA5] mb-2">
-              ¿Por qué elegir Precolisto?
-            </h2>
-            <p className="text-[#FFC107] text-xl font-semibold mb-6">
-              Te ofrecemos calidad
-            </p>
-            
-            <p className="text-gray-700 mb-8 leading-relaxed">
-              En Precolisto trabajamos para que tu negocio siempre cuente con 
-              productos de calidad premium y un servicio confiable. Sabemos lo 
-              importante que es ahorrar tiempo en cocina, mantener un stock variado y 
-              garantizar la satisfacción de tus clientes. Por eso ofrecemos soluciones 
-              pensadas especialmente para profesionales como tú.
-            </p>
+  <h2 className="text-4xl md:text-5xl font-bold text-[#003DA5] mb-2">
+    ¿Por qué elegir Papas San Luis?
+  </h2>
+  <p className="text-[#FFC107] text-xl font-semibold mb-6">
+    Calidad del campo a tu mesa
+  </p>
+    
+  <p className="text-gray-700 mb-8 leading-relaxed">
+    En Papas San Luis nos especializamos en ofrecerte la mejor selección de 
+    papas lavadas y una variedad de productos congelados listos para usar. 
+    Sabemos que la frescura y la practicidad son clave para tu hogar o negocio; 
+    por eso, garantizamos procesos de limpieza rigurosos y soluciones que te 
+    ahorran tiempo sin sacrificar el sabor natural. Confía en expertos que 
+    entienden la importancia de un producto confiable y de alta calidad.
+  </p>
+
 
             <div className="space-y-4">
               <p className="text-[#003DA5] font-bold mb-4">

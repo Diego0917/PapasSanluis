@@ -1,3 +1,5 @@
+import { motion } from "framer-motion";
+
 export function SolutionsSection() {
   const sections = [
     {
@@ -16,21 +18,32 @@ export function SolutionsSection() {
     },
   ];
 
+  const unificationVariants = {
+    hiddenLeft: { x: "-50%", opacity: 0 },
+    hiddenRight: { x: "50%", opacity: 0 },
+    visible: { x: 0, opacity: 1 },
+  };
+
   return (
-    <section className="w-full">
+    <section className="w-full overflow-hidden"> 
       <div className="grid md:grid-cols-2 grid-cols-1">
         {sections.map((section, index) => (
-          <div
+          <motion.div
             key={index}
+            variants={unificationVariants}
+            initial={index === 0 ? "hiddenLeft" : "hiddenRight"} // El primero viene de la izquierda, el segundo de la derecha
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 1, ease: "easeInOut" }}
             className="relative h-[500px] md:h-[650px] overflow-hidden group"
           >
-            {/* Background Image con efecto zoom al pasar el mouse */}
+            {/* Background Image con efecto zoom */}
             <div 
               className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
               style={{ backgroundImage: `url(${section.image})` }}
             />
             
-            {/* Overlay de oscuridad para legibilidad */}
+            {/* Overlay de oscuridad */}
             <div className="absolute inset-0 bg-black/50 group-hover:bg-black/40 transition-colors duration-500" />
             
             {/* Contenido Centralizado */}
@@ -65,7 +78,7 @@ export function SolutionsSection() {
                 </svg>
               </button>
             </div>
-          </div>
+          </motion.div>
         ))}
       </div>
     </section>
