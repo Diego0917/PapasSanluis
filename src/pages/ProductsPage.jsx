@@ -1,47 +1,43 @@
 import { Star, Check, Truck, FileText, Award, Headset } from "lucide-react";
-
+const imagenesCargadas = import.meta.glob(
+  "../assets/Productos/*.{png,jpg,jpeg,svg}",
+  { eager: true },
+);
+const listaDeImagenes = Object.values(imagenesCargadas).map(
+  (img) => img.default,
+);
 export default function ProductsPage() {
   const products = [
     {
-      name: "ACEITE FRYTOL BIDON",
-      presentation: "Presentación:\n1 bidón",
-      image:
-        "https://images.unsplash.com/photo-1760445528823-fd942d4b459b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjb29raW5nJTIwb2lsJTIwYm90dGxlJTIwcHJvZHVjdHxlbnwxfHx8fDE3NzMxMTA5MjF8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+      name: "Papas criollas",
+      presentation: "Presentación:\n",
+      image: listaDeImagenes[0],
+    },
+    {
+      name: "PAPA PASTUSA GRUESA",
+      presentation: "Presentación:\n",
+      image: listaDeImagenes[1],
+    },
+    {
+      name: "PAPA R12",
+      presentation: "Presentación:\n",
+      image: listaDeImagenes[2],
+    },
+    {
+      name: "PENDIETE",
+      presentation: "Presentación:\n",
+      image: listaDeImagenes[3],
+    },
+    {
+      name: "PENDIENTE",
+      presentation: "Presentación:\n",
+      image: listaDeImagenes[4],
       rating: 5,
     },
     {
-      name: "ACEITE CHEF",
-      presentation: "Presentación:\n1 bidón",
-      image:
-        "https://images.unsplash.com/photo-1662058595162-10e024b1a907?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzdW5mbG93ZXIlMjBvaWwlMjBib3R0bGV8ZW58MXx8fHwxNzczMDUxMDQ2fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-      rating: 5,
-    },
-    {
-      name: "ACEITE PALMA",
-      presentation: "Presentación:\n1 bidón",
-      image:
-        "https://images.unsplash.com/photo-1765850257647-811b8d3c20ca?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxvbGl2ZSUyMG9pbCUyMGJvdHRsZSUyMHByZW1pdW18ZW58MXx8fHwxNzczMTE3ODM4fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-      rating: 5,
-    },
-    {
-      name: "ACEITE PREMIUM",
-      presentation: "Presentación:\n1 bidón / 500 ml",
-      image:
-        "https://images.unsplash.com/photo-1760445528823-fd942d4b459b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx2ZWdldGFibGUlMjBvaWwlMjBib3R0bGVzJTIwa2l0Y2hlbnxlbnwxfHx8fDE3NzMxMTc4Mzh8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-      rating: 5,
-    },
-    {
-      name: "MANTEQUILLA MAESTRO",
-      presentation: "Presentación:\nCaja x 15lt / Caja 12 unid x 1lt",
-      image:
-        "https://images.unsplash.com/photo-1716972065448-e08a46809530?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwYWxtJTIwb2lsJTIwcHJvZHVjdCUyMGJveHxlbnwxfHx8fDE3NzMxMTc4Mzl8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-      rating: 5,
-    },
-    {
-      name: "MANTECA VEGETAL FLAMELA",
-      presentation: "Presentación:\nCaja x 15lt / Caja 12 unid x 1lt",
-      image:
-        "https://images.unsplash.com/photo-1656711776904-993edf967bbf?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjaGVmJTIwY29va2luZyUyMG9pbCUyMGZyeWluZ3xlbnwxfHx8fDE3NzMxMTc4Mzd8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+      name: "PENDIETE",
+      presentation: "Presentación:\n",
+      image: listaDeImagenes[5],
       rating: 5,
     },
   ];
@@ -88,7 +84,7 @@ export default function ProductsPage() {
       <div className="container mx-auto px-4 py-12">
         {/* Title */}
         <h1 className="text-4xl md:text-5xl text-center text-[#003DA5] font-bold mb-12">
-          Aceite para freír al por mayor
+          LAVADOS
         </h1>
 
         {/* Products Grid */}
@@ -111,14 +107,14 @@ export default function ProductsPage() {
               <p className="text-gray-600 text-sm text-center mb-3 whitespace-pre-line">
                 {product.presentation}
               </p>
-              <div className="flex justify-center gap-1">
+              {/*<div className="flex justify-center gap-1">
                 {[...Array(product.rating)].map((_, i) => (
                   <Star
                     key={i}
                     className="w-5 h-5 fill-[#FFC107] text-[#FFC107]"
                   />
                 ))}
-              </div>
+              </div>*/}
             </div>
           ))}
         </div>
@@ -150,11 +146,7 @@ export default function ProductsPage() {
                   />
                 ))}
               </div>
-              <button className="bg-[#FFC107] text-black px-8 py-3 rounded-full font-semibold hover:bg-[#FFD54F] transition-colors w-full md:w-auto">
-                Analiza su portafolio
-              </button>
             </div>
-
             {/* Right - Image */}
             <div className="flex justify-center">
               <img
@@ -180,7 +172,7 @@ export default function ProductsPage() {
         </div>
 
         {/* Additional Info Sections - Placeholders */}
-        <div className="grid md:grid-cols-2 gap-8 mt-16">
+        {/* <div className="grid md:grid-cols-2 gap-8 mt-16">
           <div className="bg-blue-50 rounded-2xl p-8 min-h-[200px] flex items-center justify-center border-2 border-dashed border-[#003DA5]">
             <p className="text-[#003DA5] text-center">
               Espacio para información adicional 1
@@ -197,7 +189,7 @@ export default function ProductsPage() {
           <p className="text-[#003DA5] text-center">
             Espacio para información adicional 3
           </p>
-        </div>
+        </div> */}
       </div>
     </div>
   );
