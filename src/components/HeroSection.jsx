@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
+import { MessageCircle } from "lucide-react"; // Importamos el icono de WhatsApp
 import Imagendepapas from "../assets/imagendepapas.png";
 import fondoImagen from "../assets/fondosanluis3.png";
-import sanLuisLogo from "../assets/sanluislogo.png";
 
 export function HeroSection() {
   const containerVariants = {
@@ -28,11 +28,9 @@ export function HeroSection() {
       className="relative min-h-screen flex items-center text-white bg-cover bg-no-repeat overflow-hidden"
       style={{ 
         backgroundImage: `url(${fondoImagen})`,
-        /* Ajuste clave: 'center 20%' baja la imagen para que el logo de arriba se vea perfecto */
         backgroundPosition: 'center 20%' 
       }}
     >
-      {/* Overlay: lo mantenemos para que el texto blanco sea legible sobre las nubes */}
       <div className="absolute inset-0 bg-black/30"></div>
 
       <motion.div 
@@ -66,15 +64,14 @@ export function HeroSection() {
               precocidos de sabor irresistible.
             </motion.p>
 
+            {/* Botón único y grande con icono de WhatsApp */}
             <motion.div 
               variants={itemVariants}
-              className="flex gap-4 pt-4"
+              className="pt-4"
             >
-              <button className="border-2 border-white text-white px-10 py-3 rounded-full hover:bg-white hover:text-[#003DA5] transition-all font-bold text-lg">
-                CATÁLOGO
-              </button>
-              <button className="bg-[#FFC107] text-[#003DA5] px-10 py-3 rounded-full hover:bg-yellow-500 transition-all font-bold text-lg shadow-lg">
-                COTIZAR
+              <button className="bg-[#FFC107] text-[#003DA5] w-full md:max-w-md py-5 rounded-full hover:bg-yellow-500 transition-all font-black text-2xl shadow-[0_10px_30px_rgba(255,193,7,0.4)] flex items-center justify-center gap-3 group">
+                <MessageCircle className="w-8 h-8 group-hover:scale-110 transition-transform" />
+                COTIZAR AHORA
               </button>
             </motion.div>
           </div>

@@ -1,31 +1,28 @@
-import { RouterProvider } from "react-router-dom"; // Cambia "react-router" por "react-router-dom"
 import { Header } from "./components/Header";
 import { HeroSection } from "./components/HeroSection";
-import { ProductCarousel } from "./components/ProductCarousel"; // El carrusel
+// ProductCarousel quitado
 import { WhyChooseSection } from "./components/WhyChooseSection";
 import { SolutionsSection } from "./components/SolutionsSection";
 import { BlogSection } from "./components/BlogSection";
-import { Footer } from "./components/Footer";
 
 export default function App() {
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col bg-white">
       <Header />
       <main className="flex-1">
-        {/* Impacto inicial */}
         <HeroSection />
+        
+        {/* El carrusel ya no está aquí */}
 
-        {/* Muestra de productos inmediata */}
-        <ProductCarousel />
-
-        {/* Argumentos de venta y catálogo detallado */}
         <WhyChooseSection />
         <SolutionsSection />
 
-        {/* Contenido de valor antes del cierre */}
-        <BlogSection />
+        <div className="relative z-10 w-full bg-gray-50">
+          <BlogSection />
+        </div>
       </main>
-      <Footer />
+
+      {/* Aquí NO ponemos el Footer porque ya lo tienes en el archivo Root */}
     </div>
   );
 }

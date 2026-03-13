@@ -100,13 +100,7 @@ export function WhyChooseSection() {
               ))}
             </div>
 
-            <motion.button 
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="w-full py-4 bg-[#003DA5] text-white font-black rounded-xl shadow-lg hover:bg-[#002b75] transition-colors tracking-widest uppercase"
-            >
-              ¡ÚNETE A LA ÉLITE!
-            </motion.button>
+            
           </div>
         </div>
       </div>
