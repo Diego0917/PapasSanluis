@@ -3,6 +3,7 @@ import { createBrowserRouter } from "react-router-dom";
 import Root from "./root";
 import Homepage from "./pages/Homepage";
 import ProductsPage from "./pages/ProductsPage";
+import CongeladosPage from "./pages/CongeladosPages"; // Asegúrate de tener esta página creada
 
 export const router = createBrowserRouter([
   {
@@ -16,6 +17,10 @@ export const router = createBrowserRouter([
       {
         path: "productos",
         element: <ProductsPage />,
+      },
+      {
+        path: "congelados",
+        element: <CongeladosPage />,
       },
     ],
   },

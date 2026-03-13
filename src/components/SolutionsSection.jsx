@@ -21,7 +21,7 @@ export function SolutionsSection() {
       description:
         "La solución perfecta para ahorrar tiempo en cocina sin perder calidad. Variedad de cortes listos para freír.",
       buttonText: "Conocer más",
-      link: "/congelados-detalles",
+      link: "/congelados",
       image: imagenCongelados,
     },
   ];
