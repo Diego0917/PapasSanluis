@@ -31,7 +31,7 @@ export function BlogSection() {
       title: "Del congelador a la mesa",
       category: "Guía Rápida",
       description: "Optimiza los tiempos de tu cocina: cómo pasar de 0 a 100 en solo 6 minutos sin perder calidad.",
-      fullContent: "Las papas San Luis están diseñadas para ir directo del congelador a la freidora. Esto evita que el almidón se oxide. 6 minutos a fuego constante te darán la textura crocante por fuera y puré por dentro que tus clientes aman.",
+      fullContent: "San Luis están diseñadas para ir directo del congelador a la freidora. Esto evita que el almidón se oxide. 6 minutos a fuego constante te darán la textura crocante por fuera y puré por dentro que tus clientes aman.",
       icon: <Clock className="text-[#FFC107]" />,
       image: imgRapidez,
     },
