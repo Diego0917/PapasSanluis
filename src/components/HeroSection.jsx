@@ -1,51 +1,105 @@
+import { motion } from "framer-motion";
 import Imagendepapas from "../assets/imagendepapas.png";
-import fondoImagen from "../assets/1.jpeg";
+import fondoImagen from "../assets/fondosanluis3.png";
 import sanLuisLogo from "../assets/sanluislogo.png";
 
 export function HeroSection() {
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: { 
+      opacity: 1, 
+      y: 0, 
+      transition: { duration: 0.8, ease: "easeOut" } 
+    },
+  };
+
   return (
     <section
-      className="relative min-h-screen flex items-center text-white bg-cover bg-center bg-no-repeat overflow-hidden"
-      style={{ backgroundImage: `url(${fondoImagen})` }}
+      className="relative min-h-screen flex items-center text-white bg-cover bg-no-repeat overflow-hidden"
+      style={{ 
+        backgroundImage: `url(${fondoImagen})`,
+        /* Ajuste clave: 'center 20%' baja la imagen para que el logo de arriba se vea perfecto */
+        backgroundPosition: 'center 20%' 
+      }}
     >
-      {/* Capa de oscuridad (Overlay) - Ajusta el 0.3 si quieres que se vea más clara o más oscura */}
+      {/* Overlay: lo mantenemos para que el texto blanco sea legible sobre las nubes */}
       <div className="absolute inset-0 bg-black/30"></div>
 
-      <div className="container mx-auto px-4 relative z-10 pt-24">
+      <motion.div 
+        className="container mx-auto px-4 relative z-10 pt-24"
+        variants={containerVariants}
+        initial="hidden"
+        animate="visible"
+      >
         <div className="grid md:grid-cols-2 gap-8 items-center">
-          {/* Lado Izquierdo: Texto */}
+          
           <div className="space-y-6">
-            <h1 className="text-5xl md:text-7xl font-bold leading-tight drop-shadow-lg">
+            <motion.h1 
+              variants={itemVariants}
+              className="text-5xl md:text-7xl font-bold leading-tight drop-shadow-lg"
+            >
               Del congelador a su mesa de 5 a 6 minutos.
-            </h1>
-            <p className="text-[#FFC107] text-3xl font-bold italic drop-shadow-md">
+            </motion.h1>
+
+            <motion.p 
+              variants={itemVariants}
+              className="text-[#FFC107] text-3xl font-bold italic drop-shadow-md"
+            >
               Gracias por preferirnos.
-            </p>
-            <p className="text-xl text-gray-100 max-w-lg drop-shadow-sm">
+            </motion.p>
+
+            <motion.p 
+              variants={itemVariants}
+              className="text-xl text-gray-100 max-w-lg drop-shadow-sm"
+            >
               Conoce nuestro catálogo y sorprende a tus clientes con productos
               precocidos de sabor irresistible.
-            </p>
+            </motion.p>
 
-            <div className="flex gap-4 pt-4">
+            <motion.div 
+              variants={itemVariants}
+              className="flex gap-4 pt-4"
+            >
               <button className="border-2 border-white text-white px-10 py-3 rounded-full hover:bg-white hover:text-[#003DA5] transition-all font-bold text-lg">
                 CATÁLOGO
               </button>
               <button className="bg-[#FFC107] text-[#003DA5] px-10 py-3 rounded-full hover:bg-yellow-500 transition-all font-bold text-lg shadow-lg">
                 COTIZAR
               </button>
-            </div>
+            </motion.div>
           </div>
 
-          {/* Lado Derecho: Imagen de los Personajes */}
-          <div className="flex items-center justify-center relative">
-            <img
-              src=""
-              alt=""
-              className="w-full max-w-2xl object-contain -scale-x-100 drop-shadow-[0_20px_20px_rgba(0,0,0,0.5)]"
+          <motion.div 
+            initial={{ opacity: 0, scale: 0.8, x: 50 }}
+            animate={{ opacity: 1, scale: 1, x: 0 }}
+            transition={{ duration: 1, ease: "easeOut", delay: 0.4 }}
+            className="flex items-center justify-center relative"
+          >
+            <motion.img
+              src={Imagendepapas}
+              alt="Personajes San Luis"
+              animate={{ y: [0, -20, 0] }}
+              transition={{ 
+                duration: 5, 
+                repeat: Infinity, 
+                ease: "easeInOut" 
+              }}
+              className="w-full max-w-2xl object-contain -scale-x-100 drop-shadow-[0_35px_35px_rgba(0,0,0,0.4)]"
             />
-          </div>
+          </motion.div>
+          
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 }
