@@ -1,96 +1,193 @@
-import {
-  Facebook,
-  Instagram,
-  Twitter,
-  Mail,
-  Phone,
-  MapPin,
-} from "lucide-react";
+import { useState, useEffect } from "react";
+import { Phone, MapPin, Clock, ChevronRight } from "lucide-react";
+import logoSanLuis from "../assets/sanluislogo.png";
+import papaImg from "../assets/5.png";
+
+const FallingFry = ({ delay }) => (
+  <div
+    className="absolute top-0 w-10 h-auto opacity-0 animate-fall-fry pointer-events-none z-50"
+    style={{
+      animationDelay: `${delay}s`,
+      left: `${Math.random() * 90}%`,
+    }}
+  >
+    <img
+      src={papaImg}
+      alt="Papa San Luis"
+      className="w-full h-full object-contain bg-transparent border-none outline-none shadow-none"
+    />
+  </div>
+);
 
 export function Footer() {
+  const currentYear = new Date().getFullYear();
+  const [frysGroup, setFrysGroup] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setFrysGroup((prev) => prev + 1);
+    }, 40000);
+
+    return () => clearInterval(interval);
+  }, []);
+
+  const scrollToTop = (e) => {
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   return (
-    <footer className="bg-[#003DA5] text-white py-12">
-      <div className="container mx-auto px-4">
-        <div className="grid md:grid-cols-4 gap-8 mb-8">
-          {/* Company Info */}
-          <div>
-            <h3 className="text-[#FFC107] mb-4">Sobre Nosotros</h3>
-            <p className="text-sm text-gray-200">
-              Proveemos productos de calidad para tu negocio, garantizando
-              rapidez y excelencia en cada entrega.
+    <footer className="relative bg-[#FFC107] text-[#003DA5] pt-24 pb-10 overflow-hidden font-sans">
+
+      {/* OLA SUPERIOR */}
+      <div className="absolute top-0 left-0 w-full overflow-hidden leading-[0] z-10">
+
+        {/* ola lenta */}
+        <svg
+          className="relative block w-[200%] h-[80px] animate-wave-slow"
+          viewBox="0 0 1440 120"
+          preserveAspectRatio="none"
+        >
+          <path
+            d="M0,60 C240,120 480,0 720,60 C960,120 1200,0 1440,60 L1440,0 L0,0 Z"
+            fill="#f8fafc"
+          />
+        </svg>
+
+        {/* ola rápida */}
+        <svg
+          className="absolute top-0 block w-[200%] h-[80px] animate-wave-fast opacity-60"
+          viewBox="0 0 1440 120"
+          preserveAspectRatio="none"
+        >
+          <path
+            d="M0,70 C240,10 480,110 720,70 C960,10 1200,110 1440,70 L1440,0 L0,0 Z"
+            fill="#f8fafc"
+          />
+        </svg>
+      </div>
+
+      {/* LLUVIA DE PAPAS */}
+      <div className="absolute top-0 left-0 w-full h-full pointer-events-none overflow-hidden">
+        {[...Array(8)].map((_, i) => (
+          <FallingFry key={`${frysGroup}-${i}`} delay={i * 0.8} />
+        ))}
+      </div>
+
+      <div className="container mx-auto px-4 relative z-20">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 border-b border-[#003DA5]/20 pb-12">
+
+          <div className="space-y-4">
+            <button
+              onClick={scrollToTop}
+              className="hover:opacity-80 transition-opacity"
+            >
+              <img
+                src={logoSanLuis}
+                alt="Logo San Luis"
+                className="h-20 w-auto object-contain"
+              />
+            </button>
+            <p className="font-bold text-xs tracking-widest uppercase italic text-[#003DA5]">
+              "Calidad del campo a tu mesa"
             </p>
           </div>
 
-          {/* Quick Links */}
-          <div>
-            <h3 className="text-[#FFC107] mb-4">Enlaces Rápidos</h3>
-            <ul className="space-y-2 text-sm">
-              <li>
-                <a href="#" className="hover:text-[#FFC107] transition-colors">
-                  Inicio
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-[#FFC107] transition-colors">
-                  Catálogo
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-[#FFC107] transition-colors">
-                  Nosotros
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-[#FFC107] transition-colors">
-                  Contacto
-                </a>
-              </li>
+          <div className="space-y-4">
+            <h4 className="text-lg font-black italic underline decoration-2 decoration-white/50">
+              NAVEGACIÓN
+            </h4>
+
+            <ul className="space-y-2">
+              {["Inicio", "Catálogo", "Nosotros", "Contacto"].map((item) => (
+                <li key={item}>
+                  <a
+                    href={item === "Inicio" ? "#" : `#${item.toLowerCase()}`}
+                    onClick={item === "Inicio" ? scrollToTop : undefined}
+                    className="flex items-center gap-2 font-bold hover:translate-x-2 transition-transform duration-300"
+                  >
+                    <ChevronRight className="w-4 h-4 text-white" />
+                    {item}
+                  </a>
+                </li>
+              ))}
             </ul>
           </div>
 
-          {/* Contact */}
-          <div>
-            <h3 className="text-[#FFC107] mb-4">Contacto</h3>
-            <ul className="space-y-3 text-sm">
-              <li className="flex items-start gap-2">
-                <Phone size={16} className="mt-1 flex-shrink-0" />
-                <span>+57 311 248 6210</span> <br></br>
-                <Phone size={16} className="mt-1 flex-shrink-0" />
-                <span>(601) 488 47 44</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <Mail size={16} className="mt-1 flex-shrink-0" />
-                <span>lol@gmail.com</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <MapPin size={16} className="mt-1 flex-shrink-0" />
+          <div className="space-y-4">
+            <h4 className="text-lg font-black italic underline decoration-2 decoration-white/50">
+              CONTACTO
+            </h4>
+
+            <div className="space-y-3 font-bold text-sm">
+              <div className="flex items-center gap-3">
+                <div className="bg-[#003DA5] text-white p-2 rounded-lg shadow-md">
+                  <Phone className="w-4 h-4" />
+                </div>
+                <span>+57 311 248 6210</span>
+              </div>
+
+              <div className="flex items-center gap-3">
+                <div className="bg-[#003DA5] text-white p-2 rounded-lg shadow-md">
+                  <MapPin className="w-4 h-4" />
+                </div>
                 <span>Bogotá, Colombia</span>
-              </li>
-            </ul>
-          </div>
+              </div>
 
-          {/* Social Media */}
-          <div>
-            <h3 className="text-[#FFC107] mb-4">Síguenos</h3>
-            <div className="flex gap-4">
-              <a href="#" className="hover:text-[#FFC107] transition-colors">
-                <Facebook size={24} />
-              </a>
-              <a href="#" className="hover:text-[#FFC107] transition-colors">
-                <Instagram size={24} />
-              </a>
-              <a href="#" className="hover:text-[#FFC107] transition-colors">
-                <Twitter size={24} />
-              </a>
+              <div className="flex items-center gap-3">
+                <div className="bg-[#003DA5] text-white p-2 rounded-lg shadow-md">
+                  <Clock className="w-4 h-4" />
+                </div>
+                <span>Lun - Sáb: 7 AM - 5 PM</span>
+              </div>
             </div>
           </div>
+
         </div>
 
-        {/* Copyright */}
-        <div className="border-t border-blue-400 pt-6 text-center text-sm text-gray-200">
-          <p>&copy;Papas San Luis. Todos los derechos reservados.</p>
+        <div className="pt-8 text-center text-[10px] font-black opacity-50 tracking-[0.2em]">
+          © {currentYear} PAPAS SAN LUIS - TODOS LOS DERECHOS RESERVADOS
         </div>
       </div>
+
+      <style>{`
+
+        @keyframes waveMove {
+          0% { transform: translateX(0); }
+          100% { transform: translateX(-50%); }
+        }
+
+        .animate-wave-slow {
+          animation: waveMove 18s linear infinite;
+        }
+
+        .animate-wave-fast {
+          animation: waveMove 10s linear infinite;
+        }
+
+        @keyframes fall-fry {
+          0% {
+            transform: translateY(-80px) rotate(0deg);
+            opacity: 0;
+          }
+
+          10% { opacity: 1; }
+
+          40% { transform: translateY(100px) rotate(90deg); }
+
+          80% { opacity: 1; }
+
+          100% {
+            transform: translateY(600px) rotate(360deg);
+            opacity: 0;
+          }
+        }
+
+        .animate-fall-fry {
+          animation: fall-fry 7s cubic-bezier(0.4,0,0.2,1) forwards;
+        }
+
+      `}</style>
     </footer>
   );
 }
