@@ -1,6 +1,5 @@
-import { Link } from "react-router";
-import { motion } from "framer-motion";
-
+import { Link } from "react-router-dom";
+import { motion } from "framer-motion"; // <--- ESTA ES LA LÍNEA QUE FALTA
 // Importación de assets locales
 import imagenLavadas from "../assets/lavados.png";
 import imagenCongelados from "../assets/congelados.png";
@@ -8,32 +7,12 @@ import imagenCongelados from "../assets/congelados.png";
 export function SolutionsSection() {
   const sections = [
     {
-      title1: "PARA",
-      title2: "TU CASA",
-      description:
-        "Encuentra aquí la variedad de productos, recetas y tips de preparación que tenemos para ti.",
-      buttonText: "Conocer más",
-      link: "/productos",
-      image:
-        "https://images.unsplash.com/photo-1609428058261-ef5b2954875a?q=80&w=1080",
-    },
-    {
-      title1: "PARA",
-      title2: "TU NEGOCIO",
-      description:
-        "Conoce el portafolio de productos y soluciones que te ayudarán a rentabilizar tu negocio.",
-      buttonText: "Conocer más",
-      link: "/congelados",
-      image:
-        "https://images.unsplash.com/photo-1622021142947-da7dedc7c39a?q=80&w=1080",
-    },
-    {
       title1: "Papas",
       title2: "Lavadas",
       description:
         "Papas seleccionadas y procesadas con limpieza superior, listas para cocinar y garantizar frescura.",
       buttonText: "Conocer más",
-      link: "/lavadas",
+      link: "/productos",
       image: imagenLavadas,
     },
     {

@@ -1,17 +1,22 @@
-import { createBrowserRouter } from "react-router";
+import { createBrowserRouter } from "react-router-dom";
+// IMPORTANTE: Asegúrate de importar Root desde donde lo tengas creado
 import Root from "./root";
 import Homepage from "./pages/Homepage";
 import ProductsPage from "./pages/ProductsPage";
-import CongeladosPages from "./pages/CongeladosPages";
 
 export const router = createBrowserRouter([
   {
     path: "/",
-    Component: Root,
+    element: <Root />, // Aquí es donde te salía el error porque no lo encontraba
     children: [
-      { index: true, Component: Homepage },
-      { path: "productos", Component: ProductsPage },
-      { path: "congelados", Component: CongeladosPages },
+      {
+        index: true,
+        element: <Homepage />,
+      },
+      {
+        path: "productos",
+        element: <ProductsPage />,
+      },
     ],
   },
 ]);
