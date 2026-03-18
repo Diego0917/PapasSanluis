@@ -9,47 +9,91 @@ const listaDeImagenes = Object.values(imagenesCargadas).map(
 export default function ProductsPage() {
   const products = [
     {
-      name: "Papas criollas",
-      presentation: "Presentación:\n",
+      name: "CRIOLLA MINI ",
+      presentation: "Presentación:\n750 GR",
       image: listaDeImagenes[0],
     },
     {
-      name: "PAPA PASTUSA GRUESA",
-      presentation: "Presentación:\n",
+      name: "CRIOLLA MINI GRANEL",
+      presentation: "Presentación:\n1 kilo",
       image: listaDeImagenes[1],
     },
     {
-      name: "PAPA R12",
-      presentation: "Presentación:\n",
+      name: "PASTUSA GRUESA ",
+      presentation: "Presentación:\n 10 LB",
       image: listaDeImagenes[2],
     },
     {
-      name: "PENDIETE",
-      presentation: "Presentación:\n",
+      name: "PASTUSA GRUESA ",
+      presentation: "Presentación:\n3 LB",
       image: listaDeImagenes[3],
     },
     {
-      name: "PENDIENTE",
-      presentation: "Presentación:\n",
+      name: "PASTUSA GRUESA ",
+      presentation: "Presentación:\n5 LB",
       image: listaDeImagenes[4],
       rating: 5,
     },
     {
-      name: "PENDIETE",
+      name: "PASTUSA PARA SALAR",
       presentation: "Presentación:\n",
       image: listaDeImagenes[5],
-      rating: 5,
+    },
+    {
+      name: "PASTUSA PAREJA ",
+      presentation: "Presentación:\n10 lb ",
+      image: listaDeImagenes[6],
+    },
+    {
+      name: "PASTUSA PAREJA ",
+      presentation: "Presentación:\n5 LB",
+      image: listaDeImagenes[7],
+    },
+    {
+      name: "PASTUSA PAREJA BULTO",
+      presentation: "Presentación:\n",
+      image: listaDeImagenes[8],
+    },
+    {
+      name: "PQ SABANERA GRUESA",
+      presentation: "Presentación:\n3KL",
+      image: listaDeImagenes[9],
+    },
+    {
+      name: "SABANERA GRUESA ",
+      presentation: "Presentación:\n10 LB",
+      image: listaDeImagenes[10],
+    },
+    {
+      name: "SABANERA GRUESA ",
+      presentation: "Presentación:\n3 LB",
+      image: listaDeImagenes[11],
+    },
+    {
+      name: "SABANERA GRUESA ",
+      presentation: "Presentación:\n5 LB",
+      image: listaDeImagenes[12],
+    },
+    {
+      name: "SABANERA GRUESA GRANEL ",
+      presentation: "Presentación:\n",
+      image: listaDeImagenes[13],
+    },
+    {
+      name: "SABANERA MINI ",
+      presentation: "Presentación:\n",
+      image: listaDeImagenes[14],
     },
   ];
 
   const features = [
-    "Excelente rendimiento en frituras",
-    "Mantiene el sabor auténtico de tus preparaciones",
-    "Presentación práctica y segura",
-    "Versatilidad para todo tipo de preparación",
-    "Frituras crujientes, doradas e irresistibles con calidad",
-    "Garantiza y resalta resultados",
-    "Resistencia a la oxidación",
+    "Pure de papas",
+    "Papas para freir",
+    "Papas para hornear",
+    "Papas para guisar",
+    "Papas para ensaladas",
+    "Papas chorreadas",
+    "Papas rellenas",
   ];
 
   const benefits = [
@@ -125,10 +169,10 @@ export default function ProductsPage() {
             {/* Left - Features */}
             <div>
               <h2 className="text-3xl text-[#003DA5] font-bold mb-6">
-                Aceites confiables para cocinas exigentes
+                PRODUCTOS PERFECTOS PARA FRITURAS CRUJIENTES Y SABROSAS
               </h2>
               <h3 className="text-xl text-[#003DA5] font-semibold mb-4">
-                Características
+                PARA RECETAS COMO:
               </h3>
               <ul className="space-y-3">
                 {features.map((feature, index) => (
@@ -138,14 +182,14 @@ export default function ProductsPage() {
                   </li>
                 ))}
               </ul>
-              <div className="flex gap-1 my-6">
+              {/* <div className="flex gap-1 my-6">
                 {[...Array(5)].map((_, i) => (
                   <Star
                     key={i}
                     className="w-6 h-6 fill-[#FFC107] text-[#FFC107]"
                   />
                 ))}
-              </div>
+              </div>*/}
             </div>
             {/* Right - Image */}
             <div className="flex justify-center">
