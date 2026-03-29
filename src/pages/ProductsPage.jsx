@@ -1,239 +1,163 @@
-import { Star, Check, Truck, FileText, Award, Headset } from "lucide-react";
+import { useEffect, useState } from "react";
+import { Check, ChevronRight } from "lucide-react";
+import marcaAgua from "../assets/marcaagua.png";
+
 const imagenesCargadas = import.meta.glob(
   "../assets/Productos/*.{png,jpg,jpeg,svg}",
   { eager: true },
 );
-const listaDeImagenes = Object.values(imagenesCargadas).map(
-  (img) => img.default,
-);
+const listaDeImagenes = Object.values(imagenesCargadas).map((img) => img.default);
+
 export default function ProductsPage() {
-  const products = [
-    {
-      name: "CRIOLLA MINI ",
-      presentation: "Presentación:\n750 GR",
-      image: listaDeImagenes[0],
-    },
-    {
-      name: "CRIOLLA MINI GRANEL",
-      presentation: "Presentación:\n1 kilo",
-      image: listaDeImagenes[1],
-    },
-    {
-      name: "PASTUSA GRUESA ",
-      presentation: "Presentación:\n 10 LB",
-      image: listaDeImagenes[2],
-    },
-    {
-      name: "PASTUSA GRUESA ",
-      presentation: "Presentación:\n3 LB",
-      image: listaDeImagenes[3],
-    },
-    {
-      name: "PASTUSA GRUESA ",
-      presentation: "Presentación:\n5 LB",
-      image: listaDeImagenes[4],
-      rating: 5,
-    },
-    {
-      name: "PASTUSA PARA SALAR",
-      presentation: "Presentación:\n",
-      image: listaDeImagenes[5],
-    },
-    {
-      name: "PASTUSA PAREJA ",
-      presentation: "Presentación:\n10 lb ",
-      image: listaDeImagenes[6],
-    },
-    {
-      name: "PASTUSA PAREJA ",
-      presentation: "Presentación:\n5 LB",
-      image: listaDeImagenes[7],
-    },
-    {
-      name: "PASTUSA PAREJA BULTO",
-      presentation: "Presentación:\n",
-      image: listaDeImagenes[8],
-    },
-    {
-      name: "PQ SABANERA GRUESA",
-      presentation: "Presentación:\n3KL",
-      image: listaDeImagenes[9],
-    },
-    {
-      name: "SABANERA GRUESA ",
-      presentation: "Presentación:\n10 LB",
-      image: listaDeImagenes[10],
-    },
-    {
-      name: "SABANERA GRUESA ",
-      presentation: "Presentación:\n3 LB",
-      image: listaDeImagenes[11],
-    },
-    {
-      name: "SABANERA GRUESA ",
-      presentation: "Presentación:\n5 LB",
-      image: listaDeImagenes[12],
-    },
-    {
-      name: "SABANERA GRUESA GRANEL ",
-      presentation: "Presentación:\n",
-      image: listaDeImagenes[13],
-    },
-    {
-      name: "SABANERA MINI ",
-      presentation: "Presentación:\n",
-      image: listaDeImagenes[14],
-    },
+  const rawProducts = [
+    // BLOQUE CRIOLLA
+    { id: "criolla-mini", name: "CRIOLLA MINI", presentation: "Bolsa 750 GR", image: listaDeImagenes[0] },
+    { id: "criolla-mini", name: "CRIOLLA MINI", presentation: "Kilo / Granel", image: listaDeImagenes[1] },
+    
+    // BLOQUE PASTUSA GRUESA
+    { id: "pastusa-gruesa", name: "PASTUSA GRUESA", presentation: "10 LB", image: listaDeImagenes[2] },
+    { id: "pastusa-gruesa", name: "PASTUSA GRUESA", presentation: "5 LB", image: listaDeImagenes[4] },
+    { id: "pastusa-gruesa", name: "PASTUSA GRUESA", presentation: "3 LB", image: listaDeImagenes[3] },
+
+    // BLOQUE PASTUSA ESPECIAL
+    { id: "pastusa-salar", name: "PASTUSA PARA SALAR", presentation: "Presentación: Bulto", image: listaDeImagenes[5] },
+    
+    // BLOQUE PASTUSA PAREJA
+    { id: "pastusa-pareja", name: "PASTUSA PAREJA", presentation: "10 LB / 5 LB", image: listaDeImagenes[6] },
+    { id: "pastusa-pareja", name: "PASTUSA PAREJA", presentation: "Presentación: Bulto", image: listaDeImagenes[4] },
+
+    // BLOQUE SABANERA GRUESA
+    { id: "sabanera-gruesa", name: "SABANERA GRUESA", presentation: "10 LB / 5 LB / 3 LB", image: listaDeImagenes[1] },
+    { id: "sabanera-gruesa", name: "SABANERA GRUESA", presentation: "Paquete 3 Kilos", image: listaDeImagenes[5] },
+    
+    // BLOQUE SABANERA MINI
+    { id: "sabanera-mini", name: "SABANERA MINI", presentation: "Bolsa 750 GR", image: listaDeImagenes[7] },
   ];
 
-  const features = [
-    "Pure de papas",
-    "Papas para freir",
-    "Papas para hornear",
-    "Papas para guisar",
-    "Papas para ensaladas",
-    "Papas chorreadas",
-    "Papas rellenas",
-  ];
+  const groupedProducts = rawProducts.reduce((acc, curr) => {
+    if (!acc[curr.id]) {
+      acc[curr.id] = { name: curr.name, variants: [] };
+    }
+    acc[curr.id].variants.push(curr);
+    return acc;
+  }, {});
 
-  const benefits = [
-    {
-      icon: <Truck className="w-12 h-12 text-[#FFC107]" />,
-      title: "Entrega gratis",
-      description:
-        "Recibe tus aceites en presentaciones seguras y adecuadas para tu uso sin costo de envío.",
-    },
-    {
-      icon: <FileText className="w-12 h-12 text-[#FFC107]" />,
-      title: "Impuestos incluidos",
-      description:
-        "Aceites 100% funcionales para frituras, salteado y preparaciones horneadas con impuestos incluidos.",
-    },
-    {
-      icon: <Award className="w-12 h-12 text-[#FFC107]" />,
-      title: "Calidad garantizada",
-      description:
-        "Rendimiento prolongado sin alterar el sabor de tus preparaciones y otras ventajas adicionales.",
-    },
-    {
-      icon: <Headset className="w-12 h-12 text-[#FFC107]" />,
-      title: "Atención personalizada",
-      description:
-        "Te ayudamos a elegir el tipo de aceite ideal según el volumen y tipo de preparaciones de tu negocio.",
-    },
-  ];
+  const finalProducts = Object.values(groupedProducts);
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white">
-      <div className="container mx-auto px-4 py-12">
-        {/* Title */}
-        <h1 className="text-4xl md:text-5xl text-center text-[#003DA5] font-bold mb-12">
-          LAVADOS
-        </h1>
+    <div className="min-h-screen bg-white relative overflow-hidden font-sans">
+      
+      {/* CAPA DE MARCA DE AGUA REFORZADA */}
+      <div 
+        className="absolute inset-0 z-0 pointer-events-none"
+        style={{ 
+          backgroundImage: `url(${marcaAgua})`,
+          backgroundRepeat: 'repeat',
+          backgroundSize: '250px',    // Reducido a 250px para un patrón más denso y rítmico
+          opacity: 0.18,              // Aumentado al 18% para que se note mucho más
+          mixBlendMode: 'multiply'    
+        }}
+      />
 
-        {/* Products Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-          {products.map((product, index) => (
-            <div
-              key={index}
-              className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow"
-            >
-              <div className="bg-gray-100 rounded-xl p-6 mb-4 flex items-center justify-center h-48">
-                <img
-                  src={product.image}
-                  alt={product.name}
-                  className="max-h-full max-w-full object-contain"
-                />
-              </div>
-              <h3 className="text-[#003DA5] font-bold text-center mb-2">
-                {product.name}
-              </h3>
-              <p className="text-gray-600 text-sm text-center mb-3 whitespace-pre-line">
-                {product.presentation}
-              </p>
-              {/*<div className="flex justify-center gap-1">
-                {[...Array(product.rating)].map((_, i) => (
-                  <Star
-                    key={i}
-                    className="w-5 h-5 fill-[#FFC107] text-[#FFC107]"
-                  />
-                ))}
-              </div>*/}
-            </div>
+      <div className="container mx-auto px-4 pt-32 pb-16 relative z-10">
+        <div className="text-center mb-16">
+          <h1 className="text-5xl md:text-7xl text-[#003DA5] font-black uppercase italic tracking-tighter mb-4 leading-none">
+            NUESTROS LAVADOS
+          </h1>
+          <div className="h-2 w-32 bg-[#FFC107] mx-auto rounded-full"></div>
+        </div>
+
+        {/* Grid de productos */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mb-24 relative z-10">
+          {finalProducts.map((group, index) => (
+            <ProductCard key={index} group={group} />
           ))}
         </div>
 
-        {/* Características Section */}
-        <div className="bg-gradient-to-r from-blue-50 to-blue-100 rounded-3xl p-8 md:p-12 mb-16">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            {/* Left - Features */}
+        {/* Banner de Calidad (Reforzado el backdrop-blur) */}
+        <div className="bg-[#003DA5]/90 backdrop-blur-xl rounded-[3rem] p-10 md:p-20 text-white shadow-2xl relative overflow-hidden mb-24 border border-white/5">
+           {/* Pequeña marca de agua interna para coherencia */}
+          <div className="absolute inset-0 z-0 pointer-events-none opacity-10" style={{ backgroundImage: `url(${marcaAgua})`, backgroundSize: '180px' }}></div>
+          
+          <div className="grid md:grid-cols-2 gap-12 items-center relative z-10">
             <div>
-              <h2 className="text-3xl text-[#003DA5] font-bold mb-6">
-                PRODUCTOS PERFECTOS PARA FRITURAS CRUJIENTES Y SABROSAS
+              <h2 className="text-5xl font-black mb-8 leading-[0.9] uppercase italic">
+                CALIDAD QUE SE NOTA <br/><span className="text-[#FFC107]">EN CADA BULTO.</span>
               </h2>
-              <h3 className="text-xl text-[#003DA5] font-semibold mb-4">
-                PARA RECETAS COMO:
-              </h3>
-              <ul className="space-y-3">
-                {features.map((feature, index) => (
-                  <li key={index} className="flex items-start gap-3">
-                    <Check className="w-5 h-5 text-[#003DA5] flex-shrink-0 mt-1" />
-                    <span className="text-gray-700">{feature}</span>
-                  </li>
+              <div className="space-y-5">
+                {[
+                  "Lavado industrial garantizado",
+                  "Cero tierra, más rendimiento",
+                  "Selección manual grano a grano",
+                  "Directo de la sabana a tu negocio"
+                ].map((item, i) => (
+                  <div key={i} className="flex items-center gap-4">
+                    <div className="bg-[#FFC107] p-1 rounded-lg shadow-md">
+                      <Check className="w-5 h-5 text-[#003DA5] stroke-[4px]" />
+                    </div>
+                    <span className="text-xl font-extrabold italic uppercase tracking-tight">{item}</span>
+                  </div>
                 ))}
-              </ul>
-              {/* <div className="flex gap-1 my-6">
-                {[...Array(5)].map((_, i) => (
-                  <Star
-                    key={i}
-                    className="w-6 h-6 fill-[#FFC107] text-[#FFC107]"
-                  />
-                ))}
-              </div>*/}
+              </div>
             </div>
-            {/* Right - Image */}
-            <div className="flex justify-center">
+            <div className="relative group">
+              <div className="absolute -inset-4 bg-[#FFC107]/10 rounded-[3rem] blur-2xl group-hover:bg-[#FFC107]/20 transition-all"></div>
               <img
-                src="https://images.unsplash.com/photo-1656711776904-993edf967bbf?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjaGVmJTIwY29va2luZyUyMG9pbCUyMGZyeWluZ3xlbnwxfHx8fDE3NzMxMTc4Mzd8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
-                alt="Chef cooking"
-                className="rounded-2xl shadow-2xl max-w-md w-full"
+                src="https://images.unsplash.com/photo-1518013391915-e48694424ebc?auto=format&fit=crop&q=80&w=600"
+                className="rounded-[3rem] border-4 border-white/20 shadow-2xl transition-transform duration-700 group-hover:scale-[1.02] relative z-10"
+                alt="Calidad San Luis"
               />
             </div>
           </div>
         </div>
+      </div>
+    </div>
+  );
+}
 
-        {/* Benefits Section */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {benefits.map((benefit, index) => (
-            <div key={index} className="text-center">
-              <div className="flex justify-center mb-4">{benefit.icon}</div>
-              <h3 className="text-[#003DA5] font-bold text-lg mb-2">
-                {benefit.title}
-              </h3>
-              <p className="text-gray-600 text-sm">{benefit.description}</p>
-            </div>
-          ))}
-        </div>
+function ProductCard({ group }) {
+  const [currentIndex, setCurrentIndex] = useState(0);
 
-        {/* Additional Info Sections - Placeholders */}
-        {/* <div className="grid md:grid-cols-2 gap-8 mt-16">
-          <div className="bg-blue-50 rounded-2xl p-8 min-h-[200px] flex items-center justify-center border-2 border-dashed border-[#003DA5]">
-            <p className="text-[#003DA5] text-center">
-              Espacio para información adicional 1
-            </p>
+  useEffect(() => {
+    if (group.variants.length <= 1) return;
+    const interval = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % group.variants.length);
+    }, 4500); 
+    return () => clearInterval(interval);
+  }, [group.variants.length]);
+
+  const currentVariant = group.variants[currentIndex];
+
+  return (
+    <div className="group bg-white/70 backdrop-blur-xl rounded-[3rem] p-8 shadow-xl border border-white/10 flex flex-col items-center transition-all duration-500 hover:shadow-2xl hover:-translate-y-3">
+      <div className="relative w-full aspect-square bg-white rounded-[2.5rem] mb-6 overflow-hidden flex items-center justify-center p-8 border border-gray-100">
+        <img 
+          src={currentVariant.image} 
+          className="max-h-full max-w-full object-contain transition-all duration-1000 transform group-hover:scale-110" 
+          alt={group.name} 
+          key={currentIndex}
+        />
+        {group.variants.length > 1 && (
+          <div className="absolute bottom-4 flex gap-2">
+            {group.variants.map((_, i) => (
+              <div key={i} className={`h-1.5 rounded-full transition-all duration-500 ${i === currentIndex ? 'w-8 bg-[#003DA5]' : 'w-2 bg-gray-200'}`} />
+            ))}
           </div>
-          <div className="bg-blue-50 rounded-2xl p-8 min-h-[200px] flex items-center justify-center border-2 border-dashed border-[#003DA5]">
-            <p className="text-[#003DA5] text-center">
-              Espacio para información adicional 2
-            </p>
-          </div>
-        </div>
+        )}
+      </div>
 
-        <div className="bg-blue-50 rounded-2xl p-8 mt-8 min-h-[200px] flex items-center justify-center border-2 border-dashed border-[#003DA5]">
-          <p className="text-[#003DA5] text-center">
-            Espacio para información adicional 3
-          </p>
-        </div> */}
+      <h3 className="text-[#003DA5] font-black text-center text-2xl mb-2 uppercase italic tracking-tighter leading-none">
+        {group.name}
+      </h3>
+      <div className="h-1.5 w-12 bg-[#FFC107] mb-4 group-hover:w-24 transition-all duration-500 rounded-full shadow-md"></div>
+      
+      <p className="text-gray-500 font-bold text-xs text-center uppercase tracking-widest min-h-[32px] flex items-center leading-tight">
+        {currentVariant.presentation}
+      </p>
+
+      <div className="mt-6 flex items-center gap-2 text-[#003DA5] font-black text-[10px] uppercase tracking-tighter bg-blue-50 px-4 py-2 rounded-full italic group-hover:bg-[#FFC107] group-hover:text-[#003DA5] transition-colors duration-500">
+        <ChevronRight className="w-3 h-3 stroke-[4px]" />
+        <span>Frescura Garantizada</span>
       </div>
     </div>
   );

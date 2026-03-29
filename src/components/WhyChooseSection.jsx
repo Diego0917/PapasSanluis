@@ -1,8 +1,8 @@
 import { motion } from "framer-motion";
 import { Truck, Boxes, Star, Utensils } from 'lucide-react';
 import fondoPapitas from "../assets/fondo de papitas san luis.jpeg";
-// Importamos el logo
 import logoSanLuis from "../assets/sanluislogo.png";
+import marcaAgua from "../assets/marcaagua.png"; // Importamos la marca de agua
 
 export function WhyChooseSection() {
   const features = [
@@ -29,10 +29,23 @@ export function WhyChooseSection() {
   ];
 
   return (
-    <section className="py-20 bg-slate-50 overflow-hidden">
-      <div className="container mx-auto px-4">
+    <section className="py-20 bg-slate-50 relative overflow-hidden">
+      
+      {/* CAPA DE MARCA DE AGUA (Igual a la del Blog para que combinen) */}
+      <div 
+        className="absolute inset-0 z-0 pointer-events-none"
+        style={{ 
+          backgroundImage: `url(${marcaAgua})`,
+          backgroundRepeat: 'round', // Asegura bloques completos
+          backgroundSize: '350px',    // Tamaño grande para notar los muñecos
+          opacity: 0.12,              // Un toque más de fuerza que el anterior para que resalte
+          mixBlendMode: 'multiply'    
+        }}
+      />
+
+      <div className="container mx-auto px-4 relative z-10">
         
-        {/* Encabezado con el LOGO integrado en el título */}
+        {/* Encabezado con el LOGO */}
         <div className="text-center mb-16">
           <motion.div 
             initial={{ opacity: 0, y: -20 }}
@@ -44,7 +57,7 @@ export function WhyChooseSection() {
             <img 
               src={logoSanLuis} 
               alt="San Luis" 
-              className="h-16 md:h-24 w-auto object-contain" 
+              className="h-16 md:h-24 w-auto object-contain drop-shadow-md" 
             />
             <span>es la ley?</span>
           </motion.div>
@@ -72,12 +85,13 @@ export function WhyChooseSection() {
                 <p className="text-white text-2xl font-black italic">EL SABOR QUE MANDA.</p>
               </div>
             </div>
+            {/* Círculo de luz decorativo */}
             <div className="absolute -top-10 -left-10 w-64 h-64 bg-[#FFC107] rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse"></div>
           </motion.div>
 
           {/* Lado Contenido */}
           <div className="space-y-8">
-            <p className="text-xl text-gray-600 leading-relaxed font-medium italic border-l-4 border-[#FFC107] pl-6">
+            <p className="text-xl text-gray-800 leading-relaxed font-bold italic border-l-4 border-[#FFC107] pl-6 bg-white/40 backdrop-blur-[2px] py-4 rounded-r-2xl shadow-sm">
               "No solo vendemos papas; entregamos la herramienta principal para que tu cocina brille. Frescura indomable y una logística que no perdona errores."
             </p>
 
@@ -89,18 +103,16 @@ export function WhyChooseSection() {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ delay: index * 0.1 }}
                   viewport={{ once: true }}
-                  className="bg-white p-6 rounded-2xl shadow-sm border-b-4 border-transparent hover:border-[#003DA5] hover:shadow-xl transition-all group"
+                  className="bg-white/90 backdrop-blur-sm p-6 rounded-2xl shadow-sm border-b-4 border-transparent hover:border-[#003DA5] hover:shadow-xl transition-all group relative z-20"
                 >
                   <div className="text-[#003DA5] mb-4 bg-blue-50 w-12 h-12 flex items-center justify-center rounded-xl group-hover:bg-[#003DA5] group-hover:text-white transition-colors">
                     {feature.icon}
                   </div>
                   <h3 className="font-bold text-[#003DA5] text-lg mb-1">{feature.title}</h3>
-                  <p className="text-gray-500 text-sm leading-snug">{feature.text}</p>
+                  <p className="text-gray-600 text-sm leading-snug font-medium">{feature.text}</p>
                 </motion.div>
               ))}
             </div>
-
-            
           </div>
         </div>
       </div>
