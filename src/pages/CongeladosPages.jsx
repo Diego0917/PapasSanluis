@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import { Check, ChevronRight } from "lucide-react";
 import marcaAgua from "../assets/marcaagua.png";
+// Importamos la nueva imagen que generamos
+import congelados2 from "../assets/congelados2.png"; 
 
 const imagenesCargadas = import.meta.glob(
   "../assets/Productos/*.{png,jpg,jpeg,svg}",
@@ -97,10 +99,11 @@ export default function CongeladosPage() {
             </div>
             <div className="relative group">
               <div className="absolute -inset-4 bg-[#FFC107]/10 rounded-[3rem] blur-2xl group-hover:bg-[#FFC107]/20 transition-all"></div>
+              {/* Aquí pusimos tu imagen congelados2 */}
               <img
-                src="https://images.unsplash.com/photo-1573016608244-7d56ad3d2813?auto=format&fit=crop&q=80&w=800"
-                alt="Calidad Congelados"
-                className="rounded-[3rem] border-4 border-white/20 shadow-2xl transition-transform duration-700 group-hover:scale-[1.02] relative z-10"
+                src={congelados2}
+                alt="Calidad Congelados San Luis"
+                className="rounded-[3rem] border-4 border-white/20 shadow-2xl transition-transform duration-700 group-hover:scale-[1.02] relative z-10 w-full h-auto object-cover"
               />
             </div>
           </div>

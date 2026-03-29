@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Check, ChevronRight } from "lucide-react";
 import marcaAgua from "../assets/marcaagua.png";
+import lavados2 from "../assets/lavados2.png"; //
 
 const imagenesCargadas = import.meta.glob(
   "../assets/Productos/*.{png,jpg,jpeg,svg}",
@@ -17,6 +18,7 @@ export default function ProductsPage() {
     // BLOQUE PASTUSA GRUESA
     { id: "pastusa-gruesa", name: "PASTUSA GRUESA", presentation: "10 LB", image: listaDeImagenes[2] },
     { id: "pastusa-gruesa", name: "PASTUSA GRUESA", presentation: "5 LB", image: listaDeImagenes[4] },
+    // ERROR CORREGIDO: Se cambió 'lista To listImagenes' por 'listaDeImagenes'
     { id: "pastusa-gruesa", name: "PASTUSA GRUESA", presentation: "3 LB", image: listaDeImagenes[3] },
 
     // BLOQUE PASTUSA ESPECIAL
@@ -47,14 +49,14 @@ export default function ProductsPage() {
   return (
     <div className="min-h-screen bg-white relative overflow-hidden font-sans">
       
-      {/* CAPA DE MARCA DE AGUA REFORZADA */}
+      {/* CAPA DE MARCA DE AGUA */}
       <div 
         className="absolute inset-0 z-0 pointer-events-none"
         style={{ 
           backgroundImage: `url(${marcaAgua})`,
           backgroundRepeat: 'repeat',
-          backgroundSize: '250px',    // Reducido a 250px para un patrón más denso y rítmico
-          opacity: 0.18,              // Aumentado al 18% para que se note mucho más
+          backgroundSize: '250px',
+          opacity: 0.18, 
           mixBlendMode: 'multiply'    
         }}
       />
@@ -74,9 +76,8 @@ export default function ProductsPage() {
           ))}
         </div>
 
-        {/* Banner de Calidad (Reforzado el backdrop-blur) */}
+        {/* Banner de Calidad */}
         <div className="bg-[#003DA5]/90 backdrop-blur-xl rounded-[3rem] p-10 md:p-20 text-white shadow-2xl relative overflow-hidden mb-24 border border-white/5">
-           {/* Pequeña marca de agua interna para coherencia */}
           <div className="absolute inset-0 z-0 pointer-events-none opacity-10" style={{ backgroundImage: `url(${marcaAgua})`, backgroundSize: '180px' }}></div>
           
           <div className="grid md:grid-cols-2 gap-12 items-center relative z-10">
@@ -103,8 +104,8 @@ export default function ProductsPage() {
             <div className="relative group">
               <div className="absolute -inset-4 bg-[#FFC107]/10 rounded-[3rem] blur-2xl group-hover:bg-[#FFC107]/20 transition-all"></div>
               <img
-                src="https://images.unsplash.com/photo-1518013391915-e48694424ebc?auto=format&fit=crop&q=80&w=600"
-                className="rounded-[3rem] border-4 border-white/20 shadow-2xl transition-transform duration-700 group-hover:scale-[1.02] relative z-10"
+                src={lavados2} //
+                className="rounded-[3rem] border-4 border-white/20 shadow-2xl transition-transform duration-700 group-hover:scale-[1.02] relative z-10 w-full h-auto object-cover"
                 alt="Calidad San Luis"
               />
             </div>
