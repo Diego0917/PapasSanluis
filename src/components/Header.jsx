@@ -55,11 +55,6 @@ export function Header() {
                 </div>
               )}
             </div>
-
-            {/* Botón Cotizar */}
-            <button className="hidden md:block bg-[#003DA5] border-2 border-white text-white px-6 py-2 rounded-full font-bold hover:bg-white hover:text-[#003DA5] hover:border-[#003DA5] transition-all shadow-lg">
-              Cotizar
-            </button>
           </div>
         </div>
       </header>
