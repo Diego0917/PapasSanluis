@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Check } from "lucide-react";
+import { Check, ChevronRight } from "lucide-react";
 import marcaAgua from "../assets/marcaagua.png";
 import lavados2 from "../assets/lavados2.png"; //
 
@@ -223,6 +223,11 @@ function ProductCard({ group }) {
       <p className="text-gray-500 font-bold text-xs text-center uppercase tracking-widest min-h-[32px] flex items-center leading-tight">
         {currentVariant.presentation}
       </p>
+
+      <div className="mt-6 flex items-center gap-2 text-[#003DA5] font-black text-[10px] uppercase tracking-tighter bg-blue-50 px-4 py-2 rounded-full italic group-hover:bg-[#FFC107] group-hover:text-[#003DA5] transition-colors duration-500">
+        <ChevronRight className="w-3 h-3 stroke-[4px]" />
+        <a href="https://wa.me/message/5YVHA5TUWWOMA1">Frescura Garantizada</a>
+      </div>
     </div>
   );
 }
