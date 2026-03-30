@@ -2,33 +2,75 @@ import { useEffect, useState } from "react";
 import { Check, ChevronRight } from "lucide-react";
 import marcaAgua from "../assets/marcaagua.png";
 // Importamos la nueva imagen que generamos
-import congelados2 from "../assets/congelados2.png"; 
+import congelados2 from "../assets/congelados2.png";
 
 const imagenesCargadas = import.meta.glob(
   "../assets/Productos/*.{png,jpg,jpeg,svg}",
   { eager: true },
 );
-const listaDeImagenes = Object.values(imagenesCargadas).map((img) => img.default);
+const listaDeImagenes = Object.values(imagenesCargadas).map(
+  (img) => img.default,
+);
 
 export default function CongeladosPage() {
   const rawProducts = [
     // CRIOLLA PORCIONADA
-    { id: "criolla-porc", name: "CRIOLLA PORCIONADA", presentation: "Caja 3000g (Paquetes 150g)", image: listaDeImagenes[0] },
-    
+    {
+      id: "criolla-porc",
+      name: "CRIOLLA PORCIONADA",
+      presentation: "Caja 3000g (Paquetes 150g)",
+      image: listaDeImagenes[0],
+    },
+
     // CRIOLLA PRECOCIDA
-    { id: "criolla-prec", name: "CRIOLLA PRECOCIDA", presentation: "Bolsa 1000g / Kilo", image: listaDeImagenes[1] },
-    { id: "criolla-prec", name: "CRIOLLA PRECOCIDA", presentation: "Bolsa 2500g / Granel", image: listaDeImagenes[7] },
-    
+    {
+      id: "criolla-prec",
+      name: "CRIOLLA PRECOCIDA",
+      presentation: "Bolsa 1000g / Kilo",
+      image: listaDeImagenes[1],
+    },
+    {
+      id: "criolla-prec",
+      name: "CRIOLLA PRECOCIDA",
+      presentation: "Bolsa 2500g / Granel",
+      image: listaDeImagenes[7],
+    },
+
     // YUCA
-    { id: "yuca-croq", name: "CROQUETA DE YUCA", presentation: "Kilo / Libra", image: listaDeImagenes[2] },
-    { id: "yuca-prec", name: "YUCA PRECOCIDA", presentation: "Bolsa 2500g / Granel", image: listaDeImagenes[6] },
+    {
+      id: "yuca-croq",
+      name: "CROQUETA DE YUCA",
+      presentation: "Kilo / Libra",
+      image: listaDeImagenes[2],
+    },
+    {
+      id: "yuca-prec",
+      name: "YUCA PRECOCIDA",
+      presentation: "Bolsa 2500g / Granel",
+      image: listaDeImagenes[6],
+    },
 
     // FRANCESA
-    { id: "fran-porc", name: "FRANCESA PORCIONADA", presentation: "Caja 3000g (Paquetes 150g)", image: listaDeImagenes[3] },
-    { id: "fran-std", name: "PAPA FRANCESA", presentation: "Kilo / Libra", image: listaDeImagenes[4] },
-    
+    {
+      id: "fran-porc",
+      name: "FRANCESA PORCIONADA",
+      presentation: "Caja 3000g (Paquetes 150g)",
+      image: listaDeImagenes[3],
+    },
+    {
+      id: "fran-std",
+      name: "PAPA FRANCESA",
+      presentation: "Kilo / Libra",
+      image: listaDeImagenes[4],
+    },
+
     // PATACÓN
-    { id: "patacon", name: "PATACÓN PRECOCIDO", presentation: "2500g / Libra", image: listaDeImagenes[5] },
+    {
+      id: "patacon",
+      name: "PATACÓN PRECOCIDO",
+      presentation: "2500g / Libra",
+      image: listaDeImagenes[5],
+    },
   ];
 
   const groupedProducts = rawProducts.reduce((acc, curr) => {
@@ -43,16 +85,15 @@ export default function CongeladosPage() {
 
   return (
     <div className="min-h-screen bg-white relative overflow-hidden font-sans">
-      
       {/* CAPA DE MARCA DE AGUA REFORZADA */}
-      <div 
+      <div
         className="absolute inset-0 z-0 pointer-events-none"
-        style={{ 
+        style={{
           backgroundImage: `url(${marcaAgua})`,
-          backgroundRepeat: 'repeat',
-          backgroundSize: '250px',
-          opacity: 0.18, 
-          mixBlendMode: 'multiply'
+          backgroundRepeat: "repeat",
+          backgroundSize: "250px",
+          opacity: 0.18,
+          mixBlendMode: "multiply",
         }}
       />
 
@@ -74,25 +115,34 @@ export default function CongeladosPage() {
         {/* Banner de Calidad (San Luis es la Ley) */}
         <div className="bg-[#003DA5]/90 backdrop-blur-xl rounded-[3rem] p-10 md:p-20 text-white shadow-2xl relative overflow-hidden mb-24 border border-white/5">
           {/* Marca de agua interna sutil */}
-          <div className="absolute inset-0 z-0 pointer-events-none opacity-10" style={{ backgroundImage: `url(${marcaAgua})`, backgroundSize: '180px' }}></div>
-          
+          <div
+            className="absolute inset-0 z-0 pointer-events-none opacity-10"
+            style={{
+              backgroundImage: `url(${marcaAgua})`,
+              backgroundSize: "180px",
+            }}
+          ></div>
+
           <div className="grid md:grid-cols-2 gap-12 items-center relative z-10">
             <div>
               <h2 className="text-5xl font-black mb-8 leading-[0.9] uppercase italic">
-                CERO DESPERDICIO, <br/><span className="text-[#FFC107]">MÁXIMO RENDIMIENTO.</span>
+                CERO DESPERDICIO, <br />
+                <span className="text-[#FFC107]">MÁXIMO RENDIMIENTO.</span>
               </h2>
               <div className="space-y-5">
                 {[
                   "Porciones exactas para control de costos",
                   "Ahorro de hasta 40 min en preparación",
                   "Crocancia extrema en solo 6 minutos",
-                  "Mínima absorción de grasa"
+                  "Mínima absorción de grasa",
                 ].map((item, i) => (
                   <div key={i} className="flex items-center gap-4">
                     <div className="bg-[#FFC107] p-1 rounded-lg shadow-md">
                       <Check className="w-5 h-5 text-[#003DA5] stroke-[4px]" />
                     </div>
-                    <span className="text-xl font-extrabold italic uppercase tracking-tight">{item}</span>
+                    <span className="text-xl font-extrabold italic uppercase tracking-tight">
+                      {item}
+                    </span>
                   </div>
                 ))}
               </div>
@@ -138,9 +188,9 @@ function ProductCard({ group }) {
         {group.variants.length > 1 && (
           <div className="absolute bottom-4 flex gap-2">
             {group.variants.map((_, i) => (
-              <div 
-                key={i} 
-                className={`h-1.5 rounded-full transition-all duration-500 ${i === currentIndex ? 'w-8 bg-[#003DA5]' : 'w-2 bg-gray-200'}`}
+              <div
+                key={i}
+                className={`h-1.5 rounded-full transition-all duration-500 ${i === currentIndex ? "w-8 bg-[#003DA5]" : "w-2 bg-gray-200"}`}
               />
             ))}
           </div>
@@ -151,14 +201,20 @@ function ProductCard({ group }) {
         {group.name}
       </h3>
       <div className="h-1.5 w-12 bg-[#FFC107] mb-4 group-hover:w-24 transition-all duration-500 rounded-full shadow-md"></div>
-      
+
       <p className="text-gray-500 font-bold text-xs text-center uppercase tracking-widest min-h-[32px] flex items-center leading-tight">
         {currentVariant.presentation}
       </p>
 
       <div className="mt-6 flex items-center gap-2 text-[#003DA5] font-black text-[10px] uppercase tracking-tighter bg-blue-50 px-4 py-2 rounded-full italic group-hover:bg-[#FFC107] group-hover:text-[#003DA5] transition-colors duration-500">
         <ChevronRight className="w-3 h-3 stroke-[4px]" />
-        <span>Listas para freír</span>
+        <a
+          href="https://wa.me/message/5YVHA5TUWWOMA1"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Listas para freír
+        </a>
       </div>
     </div>
   );
