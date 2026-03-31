@@ -99,19 +99,31 @@ export function Footer() {
             </h4>
 
             <ul className="space-y-2">
-              {["Inicio", "Catálogo", "Nosotros", "Contacto"].map((item) => (
-                <li key={item}>
-                  <a
-                    href={item === "Inicio" ? "#" : `#${item.toLowerCase()}`}
-                    onClick={item === "Inicio" ? scrollToTop : undefined}
-                    className="flex items-center gap-2 font-bold hover:translate-x-2 transition-transform duration-300"
-                  >
-                    <ChevronRight className="w-4 h-4 text-white" />
-                    {item}
-                  </a>
-                </li>
-              ))}
-            </ul>
+  {[
+    { label: "Inicio", id: "inicio" },
+    { label: "Catálogo", id: "Solutions" },
+    { label: "Nosotros", id: "why-choose" },
+  ].map((item) => (
+    <li key={item.id}>
+      <a
+        href={`#${item.id}`}
+        onClick={(e) => {
+          if (item.label === "Inicio") {
+            scrollToTop(e);
+          } else {
+            // Lógica de scroll suave manual
+            e.preventDefault();
+            document.getElementById(item.id)?.scrollIntoView({ behavior: "smooth" });
+          }
+        }}
+        className="flex items-center gap-2 font-bold hover:translate-x-2 transition-transform duration-300"
+      >
+        <ChevronRight className="w-4 h-4 text-white" />
+        {item.label}
+      </a>
+    </li>
+  ))}
+</ul>
           </div>
 
           <div className="space-y-4">
@@ -124,7 +136,7 @@ export function Footer() {
                 <div className="bg-[#003DA5] text-white p-2 rounded-lg shadow-md">
                   <Phone className="w-4 h-4" />
                 </div>
-                <span>+57 311 248 6210</span>
+                <span>+57 311 8400968</span>
               </div>
 
               <div className="flex items-center gap-3">
@@ -132,13 +144,6 @@ export function Footer() {
                   <MapPin className="w-4 h-4" />
                 </div>
                 <span>Bogotá, Colombia</span>
-              </div>
-
-              <div className="flex items-center gap-3">
-                <div className="bg-[#003DA5] text-white p-2 rounded-lg shadow-md">
-                  <Clock className="w-4 h-4" />
-                </div>
-                <span>Lun - Sáb: 7 AM - 5 PM</span>
               </div>
             </div>
           </div>

@@ -29,7 +29,7 @@ export function WhyChooseSection() {
   ];
 
   return (
-    <section className="py-20 bg-slate-50 relative overflow-hidden">
+    <section id="why-choose" className="py-20 bg-slate-50 relative overflow-hidden">
       
       {/* CAPA DE MARCA DE AGUA (Igual a la del Blog para que combinen) */}
       <div 

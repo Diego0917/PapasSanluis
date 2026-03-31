@@ -33,7 +33,7 @@ export function SolutionsSection() {
   };
 
   return (
-    <section className="w-full overflow-hidden bg-white">
+    <section className="w-full overflow-hidden bg-white"  id="Solutions">
       {/* Grid: 1 columna en móvil, 2 en tablets/desktop */}
       <div className="grid md:grid-cols-2 grid-cols-1">
         {sections.map((section, index) => (
