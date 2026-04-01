@@ -43,12 +43,7 @@ export default function CongeladosPage() {
       presentation: "Kilo / Libra",
       image: listaDeImagenes[2],
     },
-    {
-      id: "yuca-prec",
-      name: "YUCA PRECOCIDA",
-      presentation: "Bolsa 2500g / Granel",
-      image: listaDeImagenes[6],
-    },
+    
 
     // FRANCESA
     {

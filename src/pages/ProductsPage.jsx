@@ -13,7 +13,7 @@ const listaDeImagenes = Object.values(imagenesCargadas).map(
 export default function ProductsPage() {
   const rawProducts = [
     { id: 1, name: "CRIOLLA MINI", presentation: "Bolsa 750 GR", image: listaDeImagenes[0] },
-    { id: 2, name: "CRIOLLA MINI", presentation: "Kilo / Granel", image: listaDeImagenes[1] },
+    { id: 2, name: "CRIOLLA ", presentation: "Kilo / Granel", image: listaDeImagenes[1] },
     { id: 3, name: "PASTUSA GRUESA", presentation: "10 LB", image: listaDeImagenes[2] },
     { id: 4, name: "PASTUSA GRUESA", presentation: "5 LB", image: listaDeImagenes[4] },
     { id: 5, name: "PASTUSA GRUESA", presentation: "3 LB", image: listaDeImagenes[3] },
