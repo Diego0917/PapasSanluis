@@ -3,7 +3,7 @@ import marcaAgua from "../assets/marcaagua.png";
 import lavados2 from "../assets/lavados2.png";
 
 const imagenesCargadas = import.meta.glob(
-  "../assets/Productos/*.{png,jpg,jpeg,svg}",
+  "../assets/*.{png,jpg,jpeg,svg,PNG,JPG,JPEG}",
   { eager: true },
 );
 const listaDeImagenes = Object.values(imagenesCargadas).map(
@@ -11,18 +11,19 @@ const listaDeImagenes = Object.values(imagenesCargadas).map(
 );
 
 export default function ProductsPage() {
+  console.log("Orden de mis fotos:", listaDeImagenes);
   const rawProducts = [
-    { id: 1, name: "CRIOLLA MINI", presentation: "Bolsa 750 GR", image: listaDeImagenes[0] },
-    { id: 2, name: "CRIOLLA ", presentation: "Kilo / Granel", image: listaDeImagenes[1] },
-    { id: 3, name: "PASTUSA GRUESA", presentation: "10 LB", image: listaDeImagenes[2] },
-    { id: 4, name: "PASTUSA GRUESA", presentation: "5 LB", image: listaDeImagenes[4] },
-    { id: 5, name: "PASTUSA GRUESA", presentation: "3 LB", image: listaDeImagenes[3] },
-    { id: 6, name: "PASTUSA PARA SALAR", presentation: "Presentación: Bulto", image: listaDeImagenes[5] },
-    { id: 7, name: "PASTUSA PAREJA", presentation: "10 LB / 5 LB", image: listaDeImagenes[6] },
-    { id: 8, name: "PASTUSA PAREJA", presentation: "Presentación: Bulto", image: listaDeImagenes[4] },
-    { id: 9, name: "SABANERA GRUESA", presentation: "10 LB / 5 LB / 3 LB", image: listaDeImagenes[1] },
-    { id: 10, name: "SABANERA GRUESA", presentation: "Paquete 3 Kilos", image: listaDeImagenes[5] },
-    { id: 11, name: "SABANERA MINI", presentation: "Bolsa 750 GR", image: listaDeImagenes[7] },
+    { id: 1, name: "CRIOLLA MINI", presentation: "Bolsa 750 GR", image: listaDeImagenes[18] },
+    { id: 2, name: "CRIOLLA ", presentation: "Kilo / Granel", image: listaDeImagenes[15] },
+    { id: 3, name: "PASTUSA GRUESA", presentation: "10 LB", image: listaDeImagenes[5] },
+    { id: 4, name: "PASTUSA GRUESA", presentation: "5 LB", image: listaDeImagenes[22] },
+    { id: 5, name: "PASTUSA GRUESA", presentation: "3 LB", image: listaDeImagenes[21] },
+    { id: 6, name: "PASTUSA PARA SALAR", presentation: "Presentación: Bulto", image: listaDeImagenes[23] },
+    { id: 7, name: "PASTUSA PAREJA", presentation: "10 LB / 5 LB", image: listaDeImagenes[24] },
+    { id: 8, name: "PASTUSA PAREJA", presentation: "Presentación: Bulto", image: listaDeImagenes[25] },
+    { id: 9, name: "SABANERA GRUESA", presentation: "10 LB / 5 LB / 3 LB", image: listaDeImagenes[27] },
+    { id: 10, name: "SABANERA GRUESA", presentation: "Paquete 3 Kilos", image: listaDeImagenes[27] },
+    { id: 11, name: "SABANERA MINI", presentation: "Bolsa 750 GR", image: listaDeImagenes[26] },
   ];
 
   return (

@@ -92,7 +92,10 @@ export function WhyChooseSection() {
           {/* Lado Contenido */}
           <div className="space-y-8">
             <p className="text-xl text-gray-800 leading-relaxed font-bold italic border-l-4 border-[#FFC107] pl-6 bg-white/40 backdrop-blur-[2px] py-4 rounded-r-2xl shadow-sm">
-              "No solo vendemos papas; entregamos la herramienta principal para que tu cocina brille. Frescura indomable y una logística que no perdona errores."
+              "Nuestro honor es que cada variedad representa la esencia de nuestras tierras, donde estas 
+papas son cultivadas con dedicación. Ideales para el uso doméstico, comercialización y 
+uso en restaurantes, estas variedades ofrecen opciones para cremas, guisos, frituras y 
+más. "
             </p>
 
             <div className="grid sm:grid-cols-2 gap-4">

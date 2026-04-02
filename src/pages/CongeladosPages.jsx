@@ -5,9 +5,10 @@ import marcaAgua from "../assets/marcaagua.png";
 import congelados2 from "../assets/congelados2.png";
 
 const imagenesCargadas = import.meta.glob(
-  "../assets/Productos/*.{png,jpg,jpeg,svg}",
+  "../assets/*.{png,jpg,jpeg,svg,PNG,JPG,JPEG}", // El ** busca en todas las subcarpetas de assets
   { eager: true },
 );
+
 const listaDeImagenes = Object.values(imagenesCargadas).map(
   (img) => img.default,
 );
@@ -19,7 +20,7 @@ export default function CongeladosPage() {
       id: "criolla-porc",
       name: "CRIOLLA PORCIONADA",
       presentation: "Caja 3000g (Paquetes 150g)",
-      image: listaDeImagenes[0],
+      image: listaDeImagenes[16],
     },
 
     // CRIOLLA PRECOCIDA
@@ -27,13 +28,13 @@ export default function CongeladosPage() {
       id: "criolla-prec",
       name: "CRIOLLA PRECOCIDA",
       presentation: "Bolsa 1000g / Kilo",
-      image: listaDeImagenes[1],
+      image: listaDeImagenes[17],
     },
     {
       id: "criolla-prec",
       name: "CRIOLLA PRECOCIDA",
       presentation: "Bolsa 2500g / Granel",
-      image: listaDeImagenes[7],
+      image: listaDeImagenes[32],
     },
 
     // YUCA
@@ -41,7 +42,7 @@ export default function CongeladosPage() {
       id: "yuca-croq",
       name: "CROQUETA DE YUCA",
       presentation: "Kilo / Libra",
-      image: listaDeImagenes[2],
+      image: listaDeImagenes[33],
     },
     
 
@@ -50,13 +51,13 @@ export default function CongeladosPage() {
       id: "fran-porc",
       name: "FRANCESA PORCIONADA",
       presentation: "Caja 3000g (Paquetes 150g)",
-      image: listaDeImagenes[3],
+      image: listaDeImagenes[19],
     },
     {
       id: "fran-std",
       name: "PAPA FRANCESA",
       presentation: "Kilo / Libra",
-      image: listaDeImagenes[4],
+      image: listaDeImagenes[20],
     },
 
     // PATACÓN
@@ -64,7 +65,7 @@ export default function CongeladosPage() {
       id: "patacon",
       name: "PATACÓN PRECOCIDO",
       presentation: "2500g / Libra",
-      image: listaDeImagenes[5],
+      image: listaDeImagenes[28],
     },
   ];
 
