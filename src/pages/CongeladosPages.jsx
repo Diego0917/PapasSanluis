@@ -205,7 +205,7 @@ function ProductCard({ group }) {
       <div className="mt-6 flex items-center gap-2 text-[#003DA5] font-black text-[10px] uppercase tracking-tighter bg-blue-50 px-4 py-2 rounded-full italic group-hover:bg-[#FFC107] group-hover:text-[#003DA5] transition-colors duration-500">
         <ChevronRight className="w-3 h-3 stroke-[4px]" />
         <a
-          href="https://wa.me/message/5YVHA5TUWWOMA1"
+          href="https://wa.me/qr/OUXWGFUKUQ5OP1"
           target="_blank"
           rel="noopener noreferrer"
         >

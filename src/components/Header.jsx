@@ -21,7 +21,7 @@ export function Header() {
             <img
               src={sanLuisLogo}
               alt="Papas San Luis"
-              className="h-16 md:h-20 w-auto object-contain drop-shadow-lg hover:scale-105 transition-transform"
+              className="h-16 md:h-30 w-auto object-contain drop-shadow-lg hover:scale-105 transition-transform"
             />
           </Link>
 

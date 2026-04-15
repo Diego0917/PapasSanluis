@@ -13,7 +13,7 @@ export function WhyChooseSection() {
     },
     {
       icon: <Truck className="w-6 h-6" />,
-      title: 'Logística Voraz',
+      title: 'Logística',
       text: 'Entregas que desafían el reloj.',
     },
     {
@@ -54,12 +54,7 @@ export function WhyChooseSection() {
             className="flex flex-col md:flex-row items-center justify-center gap-4 text-4xl md:text-6xl font-black text-[#003DA5] uppercase tracking-tighter"
           >
             <span>¿Por qué</span>
-            <img 
-              src={logoSanLuis} 
-              alt="San Luis" 
-              className="h-16 md:h-24 w-auto object-contain drop-shadow-md" 
-            />
-            <span>es la ley?</span>
+<span className="italic">San Luis?</span>
           </motion.div>
           <div className="w-24 h-2 bg-[#FFC107] mx-auto mt-6 rounded-full"></div>
         </div>
@@ -82,7 +77,7 @@ export function WhyChooseSection() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#003DA5]/60 to-transparent"></div>
               <div className="absolute bottom-8 left-8">
-                <p className="text-white text-2xl font-black italic">EL SABOR QUE MANDA.</p>
+                <p className="text-white text-2xl font-black italic"></p>
               </div>
             </div>
             {/* Círculo de luz decorativo */}

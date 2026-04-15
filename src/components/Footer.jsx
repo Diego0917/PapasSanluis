@@ -136,15 +136,24 @@ export function Footer() {
                 <div className="bg-[#003DA5] text-white p-2 rounded-lg shadow-md">
                   <Phone className="w-4 h-4" />
                 </div>
-                <span>+57 311 8400968</span>
+                <span>+57 311 248 6210</span>
+                <div className="bg-[#003DA5] text-white p-2 rounded-lg shadow-md">
+                  <Phone className="w-4 h-4" />
+                </div>
+                <span>(601) 3058486</span>
+                
               </div>
-
               <div className="flex items-center gap-3">
+                <div className="bg-[#003DA5] text-white p-2 rounded-lg shadow-md">
+                  <Phone className="w-4 h-4" />
+                </div>
+                <span>+57 311 8400968</span>
                 <div className="bg-[#003DA5] text-white p-2 rounded-lg shadow-md">
                   <MapPin className="w-4 h-4" />
                 </div>
                 <span>Bogotá, Colombia</span>
-              </div>
+                
+              </div>  
             </div>
           </div>
 

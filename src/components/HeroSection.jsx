@@ -66,7 +66,7 @@ export function HeroSection() {
             {/* Botón único y grande con icono de WhatsApp */}
             <motion.div variants={itemVariants} className="pt-4">
               <a
-                href="https://wa.me/message/5YVHA5TUWWOMA1"
+                href="https://wa.me/qr/SWZ6O7SGDA6UI1"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-[#FFC107] text-[#003DA5] w-full md:max-w-md py-5 rounded-full hover:bg-yellow-500 transition-all font-black text-2xl shadow-[0_10px_30px_rgba(255,193,7,0.4)] flex items-center justify-center gap-3 group"
