@@ -45,7 +45,7 @@ export function HeroSection() {
               variants={itemVariants}
               className="text-5xl md:text-7xl font-bold leading-tight drop-shadow-lg"
             >
-              Del congelador a su mesa de 5 a 6 minutos.
+              Selección experta, frescura natural para tu mesa.
             </motion.h1>
 
             <motion.p
@@ -66,7 +66,8 @@ export function HeroSection() {
             {/* Botón único y grande con icono de WhatsApp */}
             <motion.div variants={itemVariants} className="pt-4">
               <a
-                href="https://wa.me/qr/SWZ6O7SGDA6UI1"
+                // He reemplazado tu link anterior por el formato de chat directo
+                href="https://wa.me/573118400968?text=Hola,%20me%20gustaría%20solicitar%20una%20cotización."
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-[#FFC107] text-[#003DA5] w-full md:max-w-md py-5 rounded-full hover:bg-yellow-500 transition-all font-black text-2xl shadow-[0_10px_30px_rgba(255,193,7,0.4)] flex items-center justify-center gap-3 group"

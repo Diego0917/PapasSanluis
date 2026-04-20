@@ -6,8 +6,9 @@ import sanLuisLogo from "../assets/sanluislogito.png";
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  // Definimos solo las dos opciones que quieres con sus rutas reales
+  // Añadimos "Inicio" al principio del array
   const menuItems = [
+    { name: "Inicio", path: "/" },
     { name: "Papas Lavadas", path: "/productos" },
     { name: "Papas Congeladas", path: "/congelados" },
   ];
@@ -21,7 +22,7 @@ export function Header() {
             <img
               src={sanLuisLogo}
               alt="Papas San Luis"
-              className="h-16 md:h-30 w-auto object-contain drop-shadow-lg hover:scale-105 transition-transform"
+              className="h-16 md:h-25 w-auto object-contain drop-shadow-lg hover:scale-105 transition-transform"
             />
           </Link>
 

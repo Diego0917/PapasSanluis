@@ -124,11 +124,12 @@ function ProductCard({ product }) {
       <div className="mt-6 flex items-center gap-2 text-[#003DA5] font-black text-[10px] uppercase tracking-tighter bg-blue-50 px-4 py-2 rounded-full italic group-hover:bg-[#FFC107] group-hover:text-[#003DA5] transition-colors duration-500">
         <ChevronRight className="w-3 h-3 stroke-[4px]" />
         <a
-          href="https://wa.me/qr/SWZ6O7SGDA6UI1"
+          // Aquí está la corrección:
+          href={`https://wa.me/573112486210?text=Hola,%20me%20gustaría%20solicitar%20información%20sobre:%20${product.name}`}
           target="_blank"
           rel="noopener noreferrer"
         >
-          Frescura garantizada
+          PIDE YA! 
         </a>
       </div>
     </div>

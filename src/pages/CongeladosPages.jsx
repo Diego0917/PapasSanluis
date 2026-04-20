@@ -203,15 +203,16 @@ function ProductCard({ group }) {
       </p>
 
       <div className="mt-6 flex items-center gap-2 text-[#003DA5] font-black text-[10px] uppercase tracking-tighter bg-blue-50 px-4 py-2 rounded-full italic group-hover:bg-[#FFC107] group-hover:text-[#003DA5] transition-colors duration-500">
-        <ChevronRight className="w-3 h-3 stroke-[4px]" />
-        <a
-          href="https://wa.me/qr/OUXWGFUKUQ5OP1"
+  <ChevronRight className="w-3 h-3 stroke-[4px]" />
+  <a
+    // Cambiamos el link aquí:
+    href={`https://wa.me/573118400968?text=Hola,%20me%20gustaría%20solicitar%20una%20cotización%20sobre:%20${currentVariant.name}`}
           target="_blank"
-          rel="noopener noreferrer"
-        >
-          Listas para freír
-        </a>
-      </div>
+    rel="noopener noreferrer"
+  >
+    PIDE YA! 
+  </a>
+</div>
     </div>
   );
 }
